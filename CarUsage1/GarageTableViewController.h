@@ -8,10 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
-#import "CoreDataTableViewController.h"
 
-@interface GarageTableViewController : CoreDataTableViewController
-
-@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+@interface GarageTableViewController : UITableViewController
 
 @end

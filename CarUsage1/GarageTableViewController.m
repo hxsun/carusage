@@ -12,33 +12,24 @@
 #import "Models.h"
 #import "SWRevealViewController.h"
 
-@interface GarageTableViewController ()
+@interface GarageTableViewController () {
+    NSMutableArray *ownedCars;
+}
+
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *revealButtonItem;
 
 @end
 
 @implementation GarageTableViewController
 
-- (void)awakeFromNib {
-    [[NSNotificationCenter defaultCenter] addObserverForName:CarUsageDatabaseAvailabilityNotification
-                                                      object:nil
-                                                       queue:nil
-                                                  usingBlock:^(NSNotification *note) {
-                                                      self.managedObjectContext = note.userInfo[CarUsageDatabaseAvailabilityContext];
-                                                  }];
-}
-
-- (void)setManagedObjectContext:(NSManagedObjectContext *)managedObjectContext {
-    _managedObjectContext = managedObjectContext;
+- (void)refreshData {
+    [ownedCars removeAllObjects];
     
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Cars"];
-    request.predicate = [NSPredicate predicateWithFormat:@"deleted != 1"];
-    request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"addedDate" ascending:YES selector:@selector(localizedStandardCompare:)]];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"deleted != 1"];
+    NSArray *searchResults = [Cars MR_findAllSortedBy:@"addedDate" ascending:NO withPredicate:predicate];
+    [ownedCars addObjectsFromArray:searchResults];
     
-    self.fetchedResultsController =[[NSFetchedResultsController alloc] initWithFetchRequest:request
-                                                                       managedObjectContext:managedObjectContext
-                                                                         sectionNameKeyPath:nil
-                                                                                  cacheName:nil];
+    [self.tableView reloadData];
 }
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -81,10 +72,9 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Car Cell"
-                                                            forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Car Cell"];
     
-    Cars *car = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    Cars *car = [ownedCars objectAtIndex:indexPath.row];
     cell.textLabel.text = car.whichType.name;
     cell.detailTextLabel.text = [NSString stringWithFormat:@"Bought at %@",
                                  [NSDateFormatter localizedStringFromDate:car.boughtDate
@@ -92,6 +82,10 @@
                                                                 timeStyle:NSDateFormatterNoStyle]];
     
     return cell;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [ownedCars count];
 }
 
 

@@ -6,7 +6,8 @@
 //  Copyright (c) 2014 fatken. All rights reserved.
 //
 
-#import "CoreDataTableViewController.h"
+#import <UIKit/UIKit.h>
+#import "Brands.h"
 
 @interface CarBrandsStep1TVC : UITableViewController
 

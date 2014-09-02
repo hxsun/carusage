@@ -30,9 +30,7 @@
 		9F4ECCAE19ADCDE600D8DD8F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F4ECC9019ADCDE500D8DD8F /* UIKit.framework */; };
 		9F4ECCB619ADCDE600D8DD8F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9F4ECCB419ADCDE600D8DD8F /* InfoPlist.strings */; };
 		9F4ECCB819ADCDE600D8DD8F /* CarUsage1Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4ECCB719ADCDE600D8DD8F /* CarUsage1Tests.m */; };
-		9F4ECCD819ADCE9F00D8DD8F /* KSAppDelegate+MOC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4ECCD719ADCE9F00D8DD8F /* KSAppDelegate+MOC.m */; };
 		9F4ECCDD19AE198100D8DD8F /* GarageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4ECCDC19AE198100D8DD8F /* GarageTableViewController.m */; };
-		9F4ECD0419AE286E00D8DD8F /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4ECD0319AE286E00D8DD8F /* CoreDataTableViewController.m */; };
 		9F4ECD1319AE37F900D8DD8F /* MenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4ECD1219AE37F900D8DD8F /* MenuTableViewController.m */; };
 		9F5DC9CE19B06126007AF905 /* ModelStepsNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5DC9CD19B06126007AF905 /* ModelStepsNavController.m */; };
 		9F5DCAF519B1D991007AF905 /* CarBrandsStep1TVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5DCAF419B1D991007AF905 /* CarBrandsStep1TVC.m */; };
@@ -90,13 +88,9 @@
 		9F4ECCB319ADCDE600D8DD8F /* CarUsage1Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CarUsage1Tests-Info.plist"; sourceTree = "<group>"; };
 		9F4ECCB519ADCDE600D8DD8F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9F4ECCB719ADCDE600D8DD8F /* CarUsage1Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarUsage1Tests.m; sourceTree = "<group>"; };
-		9F4ECCD619ADCE9F00D8DD8F /* KSAppDelegate+MOC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KSAppDelegate+MOC.h"; sourceTree = "<group>"; };
-		9F4ECCD719ADCE9F00D8DD8F /* KSAppDelegate+MOC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "KSAppDelegate+MOC.m"; sourceTree = "<group>"; };
 		9F4ECCDA19ADCF5400D8DD8F /* CarUsageDatabaseAvailability.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarUsageDatabaseAvailability.h; sourceTree = "<group>"; };
 		9F4ECCDB19AE198100D8DD8F /* GarageTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GarageTableViewController.h; sourceTree = "<group>"; };
 		9F4ECCDC19AE198100D8DD8F /* GarageTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GarageTableViewController.m; sourceTree = "<group>"; };
-		9F4ECD0219AE286E00D8DD8F /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreDataTableViewController.h; path = "../../../Downloads/Photomania Add Photo/Photomania/CoreDataTableViewController/CoreDataTableViewController.h"; sourceTree = "<group>"; };
-		9F4ECD0319AE286E00D8DD8F /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreDataTableViewController.m; path = "../../../Downloads/Photomania Add Photo/Photomania/CoreDataTableViewController/CoreDataTableViewController.m"; sourceTree = "<group>"; };
 		9F4ECD0919AE328700D8DD8F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		9F4ECD0A19AE32B000D8DD8F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		9F4ECD0B19AE32B000D8DD8F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
@@ -238,8 +232,6 @@
 			children = (
 				9F4ECC9B19ADCDE500D8DD8F /* KSAppDelegate.h */,
 				9F4ECC9C19ADCDE500D8DD8F /* KSAppDelegate.m */,
-				9F4ECCD619ADCE9F00D8DD8F /* KSAppDelegate+MOC.h */,
-				9F4ECCD719ADCE9F00D8DD8F /* KSAppDelegate+MOC.m */,
 				9F4ECCDA19ADCF5400D8DD8F /* CarUsageDatabaseAvailability.h */,
 			);
 			name = "Application Delegate";
@@ -250,8 +242,6 @@
 			children = (
 				9F29421719B54BDD00D68CF7 /* SWRevealViewController.h */,
 				9F29421819B54BDD00D68CF7 /* SWRevealViewController.m */,
-				9F4ECD0219AE286E00D8DD8F /* CoreDataTableViewController.h */,
-				9F4ECD0319AE286E00D8DD8F /* CoreDataTableViewController.m */,
 				9F4ECCDB19AE198100D8DD8F /* GarageTableViewController.h */,
 				9F4ECCDC19AE198100D8DD8F /* GarageTableViewController.m */,
 				9F4ECD1119AE37F900D8DD8F /* MenuTableViewController.h */,
@@ -413,7 +403,6 @@
 				9F5DCAF519B1D991007AF905 /* CarBrandsStep1TVC.m in Sources */,
 				9F2941AA19B480E600D68CF7 /* CarSeriesStep2TVC.m in Sources */,
 				9F4ECCDD19AE198100D8DD8F /* GarageTableViewController.m in Sources */,
-				9F4ECCD819ADCE9F00D8DD8F /* KSAppDelegate+MOC.m in Sources */,
 				9F29420219B49E5A00D68CF7 /* Components.m in Sources */,
 				9F29421919B54BDD00D68CF7 /* SWRevealViewController.m in Sources */,
 				9F29420519B49E5B00D68CF7 /* Series.m in Sources */,
@@ -424,7 +413,6 @@
 				9F29421119B49E5C00D68CF7 /* Brands.m in Sources */,
 				9FAD70C619B4470C00B1064C /* CarUsage.xcdatamodel in Sources */,
 				9F29420E19B49E5C00D68CF7 /* UpdateHistory.m in Sources */,
-				9F4ECD0419AE286E00D8DD8F /* CoreDataTableViewController.m in Sources */,
 				9F4ECC9D19ADCDE500D8DD8F /* KSAppDelegate.m in Sources */,
 				9F4ECC9919ADCDE500D8DD8F /* main.m in Sources */,
 				9F4ECD1319AE37F900D8DD8F /* MenuTableViewController.m in Sources */,

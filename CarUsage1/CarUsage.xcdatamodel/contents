@@ -32,8 +32,13 @@
         <relationship name="maintenanceTakenByCar" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Cars" inverseName="hasMaintenanceHistories" inverseEntity="Cars" syncable="YES"/>
     </entity>
     <entity name="Models" representedClassName="Models" syncable="YES">
+        <attribute name="driveType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="engine" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="onsale" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="publishedYear" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="transmissionType" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="series" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Series" inverseName="models" inverseEntity="Series" syncable="YES"/>
         <relationship name="typeOfCar" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Cars" inverseName="whichType" inverseEntity="Cars" syncable="YES"/>
     </entity>
@@ -55,7 +60,7 @@
         <element name="Cars" positionX="-36" positionY="326" width="128" height="148"/>
         <element name="Components" positionX="133" positionY="162" width="128" height="88"/>
         <element name="MaintenanceHistory" positionX="133" positionY="279" width="128" height="88"/>
-        <element name="Models" positionX="-38" positionY="162" width="128" height="103"/>
+        <element name="Models" positionX="-38" positionY="162" width="128" height="180"/>
         <element name="Series" positionX="-36" positionY="-0" width="128" height="118"/>
         <element name="UpdateHistory" positionX="135" positionY="378" width="128" height="103"/>
     </elements>

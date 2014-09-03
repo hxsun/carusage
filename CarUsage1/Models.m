@@ -2,7 +2,7 @@
 //  Models.m
 //  CarUsage1
 //
-//  Created by Kenneth on 9/1/14.
+//  Created by Kenneth on 9/2/14.
 //  Copyright (c) 2014 fatken. All rights reserved.
 //
 
@@ -13,9 +13,14 @@
 
 @implementation Models
 
+@dynamic driveType;
+@dynamic engine;
 @dynamic id;
 @dynamic name;
-@dynamic typeOfCar;
+@dynamic onsale;
+@dynamic publishedYear;
+@dynamic transmissionType;
 @dynamic series;
+@dynamic typeOfCar;
 
 @end

@@ -23,7 +23,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 //
-
+#import <UIKit/UIKit.h>
 #import "RMStep.h"
 
 @interface RMStep ()
@@ -116,7 +116,8 @@
 - (UIColor *)selectedBarColor {
     if(!_selectedBarColor) {
         // flatPeterRiverColor, 0.20392156862745098, 0.596078431372549, 0.8588235294117647
-        self.selectedBarColor = [UIColor colorWithRed:0.20392156862745098 green:0.596078431372549 blue:0.8588235294117647 alpha:1];
+        // self.selectedBarColor = [UIColor colorWithRed:0.20392156862745098 green:0.596078431372549 blue:0.8588235294117647 alpha:1];
+        self.selectedBarColor = [UIColor colorWithRed:0.0 green:122.0/255.0 blue:1.0 alpha:1.0];
     }
     
     return _selectedBarColor;

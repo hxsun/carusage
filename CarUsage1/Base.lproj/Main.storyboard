@@ -175,38 +175,10 @@
             </objects>
             <point key="canvasLocation" x="1618" y="-594"/>
         </scene>
-        <!--Table View Controller-->
-        <scene sceneID="lgb-8G-ax3">
-            <objects>
-                <tableViewController storyboardIdentifier="AddStep3CarModels" id="0CL-Y6-UQZ" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="QfB-TB-8Jg">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="feO-f0-Zg4">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="feO-f0-Zg4" id="3Bi-ab-cCz">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="0CL-Y6-UQZ" id="Syw-Yy-u88"/>
-                            <outlet property="delegate" destination="0CL-Y6-UQZ" id="DRF-Ls-TTw"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="d77-Ws-Eoy" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2008" y="-594"/>
-        </scene>
-        <!--View Controller-->
+        <!--Car Models Step3TVC-->
         <scene sceneID="zNO-dl-nSA">
             <objects>
-                <viewController storyboardIdentifier="AddStep4CarInfo" id="Ipn-3d-1Nk" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddStep3CarModels" id="Ipn-3d-1Nk" customClass="CarModelsStep3TVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Fwb-x6-Dup"/>
                         <viewControllerLayoutGuide type="bottom" id="w7F-pK-sVA"/>
@@ -214,12 +186,74 @@
                     <view key="view" contentMode="scaleToFill" id="FeF-2O-XPB">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView appearanceType="aqua" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="oi0-9R-6a3">
+                                <rect key="frame" x="0.0" y="56" width="321" height="512"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell appearanceType="aqua" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Car Model Cell" textLabel="KG0-VL-GRw" style="IBUITableViewCellStyleDefault" id="NpQ-JM-QXQ">
+                                        <rect key="frame" x="0.0" y="22" width="321" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NpQ-JM-QXQ" id="dOm-te-sfI">
+                                            <rect key="frame" x="0.0" y="0.0" width="321" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KG0-VL-GRw">
+                                                    <rect key="frame" x="15" y="0.0" width="291" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Ipn-3d-1Nk" id="jKA-Mz-yNg"/>
+                                    <outlet property="delegate" destination="Ipn-3d-1Nk" id="Lwa-ya-BkN"/>
+                                </connections>
+                            </tableView>
+                            <segmentedControl appearanceType="aqua" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="1WJ-Fc-bqk">
+                                <rect key="frame" x="99" y="20" width="123" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="在售"/>
+                                    <segment title="停售"/>
+                                </segments>
+                                <connections>
+                                    <action selector="didChangeSegment:" destination="Ipn-3d-1Nk" eventType="valueChanged" id="ze5-y0-9Oe"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="oi0-9R-6a3" id="Rhh-Lb-2IO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-Xb-V3j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2422" y="-592"/>
+            <point key="canvasLocation" x="1992" y="-592"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="yx9-Ve-BU1">
+            <objects>
+                <viewController storyboardIdentifier="AddStep4CarInfo" id="fxi-mX-u4o" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="iGF-4E-gk7"/>
+                        <viewControllerLayoutGuide type="bottom" id="h56-Xn-JWt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xcf-LG-cXs">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e9Z-g3-oUv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2348" y="-592"/>
         </scene>
         <!--Reveal View Controller-->
         <scene sceneID="iBQ-5Q-mNb">

@@ -2,7 +2,7 @@
 //  Brands.m
 //  CarUsage1
 //
-//  Created by Kenneth on 9/1/14.
+//  Created by Kenneth on 9/2/14.
 //  Copyright (c) 2014 fatken. All rights reserved.
 //
 
@@ -14,14 +14,14 @@
 @implementation Brands
 
 @dynamic id;
+@dynamic isSubbrand;
 @dynamic logo;
 @dynamic logoURL;
 @dynamic name;
 @dynamic origName;
 @dynamic pinyinName;
-@dynamic isSubbrand;
-@dynamic series;
 @dynamic childBrands;
 @dynamic parentBrand;
+@dynamic series;
 
 @end

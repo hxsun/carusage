@@ -2,7 +2,7 @@
 //  Series.m
 //  CarUsage1
 //
-//  Created by Kenneth on 9/1/14.
+//  Created by Kenneth on 9/2/14.
 //  Copyright (c) 2014 fatken. All rights reserved.
 //
 
@@ -16,7 +16,7 @@
 @dynamic id;
 @dynamic name;
 @dynamic rank;
-@dynamic models;
 @dynamic brand;
+@dynamic models;
 
 @end

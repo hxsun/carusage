@@ -65,21 +65,28 @@
         DLog(@"Show series under single brand without any subbrands.");
         [sectionTitles addObject:selectedBrand.name];
         
-        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"brand = %@", selectedBrand];
-        NSArray *series = [Series MR_findAllSortedBy:@"name" ascending:YES withPredicate:predicate];
-        [dataDictionary setObject:series forKey:selectedBrand.name];
+        //NSPredicate *predicate = [NSPredicate predicateWithFormat:@"brand = %@", selectedBrand];
+        // NSArray *series = [Series MR_findAllSortedBy:@"name" ascending:YES withPredicate:predicate];
+        [dataDictionary setObject:[selectedBrand.series allObjects] forKey:selectedBrand.name];
     } else {
         // Search for the subbrands with selected brand;
         DLog(@"Show series under parent brand with subbrands.");
         for (Brands *subbrand in selectedBrand.childBrands) {
             [sectionTitles addObject:subbrand.name];
             
-            NSPredicate *predicate = [NSPredicate predicateWithFormat:@"brand = %@", subbrand];
-            NSArray *series = [Series MR_findAllSortedBy:@"name" ascending:YES withPredicate:predicate];
-            [dataDictionary setObject:series forKey:subbrand.name];
+            // NSPredicate *predicate = [NSPredicate predicateWithFormat:@"brand = %@", subbrand];
+            //NSArray *series = [Series MR_findAllSortedBy:@"name" ascending:YES withPredicate:predicate];
+            [dataDictionary setObject:[subbrand.series allObjects] forKey:subbrand.name];
         }
     }
-    
+    // Sort every dictionary values of Series arrays.
+    for (NSString *key in dataDictionary.allKeys) {
+        
+        NSArray *entryValues = [[dataDictionary valueForKey:key] sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+            return [[(Series *)obj1 name] compare:[(Series *)obj2 name]];
+        }];
+        [dataDictionary setValue:entryValues forKey:key];
+    }
     [self.tableView reloadData];
 }
 
@@ -123,14 +130,20 @@
 }
 
 
-/*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Return NO if you do not want the specified item to be editable.
-    return YES;
+    return NO;
 }
-*/
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    Series *selected = [[dataDictionary objectForKey:[sectionTitles objectAtIndex:indexPath.section]] objectAtIndex:indexPath.row];
+    DLog(@"Select %@ on step 2", selected.name);
+    [self.stepsController.results setObject:selected forKey:KEY_SELECTED_SERIES];
+    
+    [self.stepsController showNextStep];
+}
 
 /*
 // Override to support editing the table view.

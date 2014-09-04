@@ -97,8 +97,8 @@
 
 #pragma mark - Helper
 - (BOOL)extendViewControllerBelowBars:(UIViewController *)aViewController {
-    return FALSE;
-    // return (aViewController.extendedLayoutIncludesOpaqueBars || (aViewController.edgesForExtendedLayout & UIRectEdgeTop));
+    // return FALSE;
+    return (aViewController.extendedLayoutIncludesOpaqueBars || (aViewController.edgesForExtendedLayout & UIRectEdgeTop));
 }
 
 - (void)updateContentInsetsForViewController:(UIViewController *)aViewController {
@@ -144,10 +144,6 @@
     if(![self extendViewControllerBelowBars:aViewController])
         y = self.stepsBar.frame.origin.y + self.stepsBar.frame.size.height;
     
-    if (![aViewController isKindOfClass:[UITableViewController class]]) {
-        y -= [UIApplication sharedApplication].statusBarFrame.size.height - 8;
-    }
-    
     aViewController.view.frame = CGRectMake(0, y, self.stepViewControllerContainer.frame.size.width, self.stepViewControllerContainer.frame.size.height - y);
     aViewController.view.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     aViewController.view.translatesAutoresizingMaskIntoConstraints = YES;
@@ -171,9 +167,6 @@
     CGFloat y = 0;
     if(![self extendViewControllerBelowBars:aViewController])
         y = self.stepsBar.frame.origin.y + self.stepsBar.frame.size.height;
-    if (![aViewController isKindOfClass:[UITableViewController class]]) {
-        y -= [UIApplication sharedApplication].statusBarFrame.size.height - 8;
-    }
     
     aViewController.view.frame = CGRectMake(fromLeft ? -self.stepViewControllerContainer.frame.size.width : self.stepViewControllerContainer.frame.size.width, y, self.stepViewControllerContainer.frame.size.width, self.stepViewControllerContainer.frame.size.height - y);
     aViewController.view.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;

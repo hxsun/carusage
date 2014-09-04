@@ -11,6 +11,7 @@
 #import "CarModelsStep3TVC.h"
 #import "Series.h"
 #import "Models.h"
+#import "NSMutableArray+KSSorted.h"
 
 #define keyOnSaleSegment 0
 #define keyOffSaleSegment 1
@@ -34,15 +35,36 @@
     
     if (control.selectedSegmentIndex == keyOnSaleSegment)
     {
-        [self refreshData:valueForKeyOnSaleSegment];
+        [self refreshData:valueForKeyOnSaleSegment blockToProcessData:^(NSMutableDictionary *pDictionary, Models *pModels) {
+            if ([[pDictionary allKeys] containsObject:pModels.engine]) {
+                [[pDictionary mutableArrayValueForKey:pModels.engine] addObject:pModels withComparator:^NSComparisonResult(Models *obj1, Models *obj2) {
+                    return [obj1.name compare:obj2.name];
+                }];
+            } else {
+                [pDictionary setValue:@[pModels] forKey:pModels.engine];
+            }
+        }];
     }
     else if (control.selectedSegmentIndex == keyOffSaleSegment)
     {
-        [self refreshData:valueForKeyOffSaleSegment];
+        [self refreshData:valueForKeyOffSaleSegment blockToProcessData:^(NSMutableDictionary *pDictionary, Models *pModels) {
+            NSDateComponents *components = [[NSCalendar currentCalendar] components:NSCalendarUnitYear
+                                                                           fromDate:pModels.publishedYear];
+            NSString *keyString = [NSString stringWithFormat:@"%ld款", (long)[components year]];
+            
+            if ([[pDictionary allKeys] containsObject:keyString]) {
+                
+                [[pDictionary mutableArrayValueForKey:keyString] addObject:pModels withComparator:^NSComparisonResult(Models *obj1, Models *obj2) {
+                    return [obj1.name compare:obj2.name];
+                }];
+            } else {
+                [pDictionary setValue:@[pModels] forKey:keyString];
+            }
+        }];
     }
 }
 
-- (void) refreshData:(NSInteger)valueForSelectedSegment {
+- (void) refreshData:(NSInteger)valueForSelectedSegment blockToProcessData:(void (^)(NSMutableDictionary *pDictionary, Models *pModels))block {
     [dataDictionary removeAllObjects];
     [sectionTitles removeAllObjects];
     
@@ -65,20 +87,20 @@
         DLog(@"Show series under current selected model.");
         for (Models *model in selectedSeries.models) {
             if ([model.onsale isEqualToNumber:[NSNumber numberWithInteger:valueForSelectedSegment]]) {
-                if ([[dataDictionary allKeys] containsObject:model.engine]) {
-                    [[dataDictionary mutableArrayValueForKey:model.engine] addObject:model];
-                } else {
-                    [dataDictionary setValue:@[model] forKey:model.engine];
-                }
+                block(dataDictionary, model);
             }
         }
         [sectionTitles addObjectsFromArray:dataDictionary.allKeys];
         
         // Sort the section in descending order.
-        [sectionTitles sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
-            if ([obj1 intValue] < [obj2 intValue]) return NSOrderedDescending;
-            else return NSOrderedAscending;
-        }];
+        if (valueForSelectedSegment == valueForKeyOnSaleSegment) {
+            [sectionTitles sortUsingSelector:@selector(localizedStandardCompare:)];
+        } else {
+            [sectionTitles sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+                if ([obj1 intValue] < [obj2 intValue]) return NSOrderedDescending;
+                else return NSOrderedAscending;
+            }];
+        }
     }
     [self.tableView reloadData];
 }
@@ -95,7 +117,13 @@
     dataDictionary = [NSMutableDictionary new];
     sectionTitles = [NSMutableArray new];
     
-    [self refreshData:valueForKeyOnSaleSegment];
+    [self refreshData:valueForKeyOnSaleSegment blockToProcessData:^(NSMutableDictionary *pDictionary, Models *pModels) {
+        if ([[pDictionary allKeys] containsObject:pModels.engine]) {
+            [[pDictionary mutableArrayValueForKey:pModels.engine] addObject:pModels];
+        } else {
+            [pDictionary setValue:@[pModels] forKey:pModels.engine];
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning

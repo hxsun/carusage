@@ -35,7 +35,8 @@
 		9FF2640C19B61D4900279DFA /* Brands.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF2640B19B61D4900279DFA /* Brands.m */; };
 		9FF2640F19B61D4900279DFA /* Cars.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF2640E19B61D4900279DFA /* Cars.m */; };
 		9FF2641219B61D4900279DFA /* Components.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF2641119B61D4900279DFA /* Components.m */; };
-		9FF2641C19B6FAA700279DFA /* CarUsage.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 9FF2641B19B6FAA700279DFA /* CarUsage.sqlite */; };
+		9FF2641E19B7850200279DFA /* CarUsage.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 9FF2641D19B7850100279DFA /* CarUsage.sqlite */; };
+		9FF2642119B8183800279DFA /* NSMutableArray+KSSorted.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF2642019B8183800279DFA /* NSMutableArray+KSSorted.m */; };
 		AAB8A60FE81F42F99560A39F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 938665F7C1694F6E96F90DAF /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -104,7 +105,9 @@
 		9FF2640E19B61D4900279DFA /* Cars.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cars.m; sourceTree = "<group>"; };
 		9FF2641019B61D4900279DFA /* Components.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Components.h; sourceTree = "<group>"; };
 		9FF2641119B61D4900279DFA /* Components.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Components.m; sourceTree = "<group>"; };
-		9FF2641B19B6FAA700279DFA /* CarUsage.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = CarUsage.sqlite; path = "../../../../Library/Developer/Xcode/DerivedData/MasterData-dxkbguqhfjumbxclgvmqhbgxytss/Build/Products/Debug/CarUsage.sqlite"; sourceTree = "<group>"; };
+		9FF2641D19B7850100279DFA /* CarUsage.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = CarUsage.sqlite; path = "../../../../Library/Developer/Xcode/DerivedData/MasterData-dxkbguqhfjumbxclgvmqhbgxytss/Build/Products/Debug/CarUsage.sqlite"; sourceTree = "<group>"; };
+		9FF2641F19B8183800279DFA /* NSMutableArray+KSSorted.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+KSSorted.h"; sourceTree = "<group>"; };
+		9FF2642019B8183800279DFA /* NSMutableArray+KSSorted.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+KSSorted.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +172,8 @@
 			children = (
 				9F4ECCD919ADCEA900D8DD8F /* Application Delegate */,
 				9F4ECC9E19ADCDE500D8DD8F /* Main.storyboard */,
+				9FF2641F19B8183800279DFA /* NSMutableArray+KSSorted.h */,
+				9FF2642019B8183800279DFA /* NSMutableArray+KSSorted.m */,
 				9F4ECD0D19AE331A00D8DD8F /* Controller */,
 				9F5DC9CB19B0607D007AF905 /* Car Add Navigation Controllers */,
 				9F4ECCD519ADCE6200D8DD8F /* Core Data Model */,
@@ -210,7 +215,7 @@
 		9F4ECCD519ADCE6200D8DD8F /* Core Data Model */ = {
 			isa = PBXGroup;
 			children = (
-				9FF2641B19B6FAA700279DFA /* CarUsage.sqlite */,
+				9FF2641D19B7850100279DFA /* CarUsage.sqlite */,
 				9FF263FE19B61D4800279DFA /* MaintenanceHistory.h */,
 				9FF2641019B61D4900279DFA /* Components.h */,
 				9FF2641119B61D4900279DFA /* Components.m */,
@@ -352,7 +357,7 @@
 			files = (
 				9F4ECCA519ADCDE500D8DD8F /* Images.xcassets in Resources */,
 				9F4ECC9719ADCDE500D8DD8F /* InfoPlist.strings in Resources */,
-				9FF2641C19B6FAA700279DFA /* CarUsage.sqlite in Resources */,
+				9FF2641E19B7850200279DFA /* CarUsage.sqlite in Resources */,
 				9F4ECCA019ADCDE500D8DD8F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -417,6 +422,7 @@
 				9F4ECC9D19ADCDE500D8DD8F /* KSAppDelegate.m in Sources */,
 				9FF2640F19B61D4900279DFA /* Cars.m in Sources */,
 				9F4ECC9919ADCDE500D8DD8F /* main.m in Sources */,
+				9FF2642119B8183800279DFA /* NSMutableArray+KSSorted.m in Sources */,
 				9FB2C97819B5C9B80034631A /* CarModelsStep3TVC.m in Sources */,
 				9FF2640619B61D4900279DFA /* Series.m in Sources */,
 				9FF2641219B61D4900279DFA /* Components.m in Sources */,

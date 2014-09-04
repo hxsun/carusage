@@ -42,12 +42,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CarUsage1/CarModelsStep3TVC.m"
-            timestampString = "431426548.787526"
+            timestampString = "431496234.296422"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
-            landmarkName = "-refreshData:"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
+            landmarkName = "-refreshData:blockToProcessData:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CarUsage1/CarModelsStep3TVC.m"
+            timestampString = "431496234.296422"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "-didChangeSegment:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

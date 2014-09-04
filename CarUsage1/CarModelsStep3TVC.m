@@ -173,6 +173,15 @@
     return NO;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+
+    NSString *sectionTitle = [sectionTitles objectAtIndex:indexPath.section];
+    
+    Models *model = [[dataDictionary objectForKey:sectionTitle] objectAtIndex:indexPath.row];
+    [self.stepsController.results setObject:model forKey:KEY_SELECTED_MODEL];
+    [self.stepsController showNextStep];
+}
+
 
 /*
 // Override to support editing the table view.

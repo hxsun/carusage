@@ -37,6 +37,8 @@
 		9FF2641219B61D4900279DFA /* Components.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF2641119B61D4900279DFA /* Components.m */; };
 		9FF2641E19B7850200279DFA /* CarUsage.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 9FF2641D19B7850100279DFA /* CarUsage.sqlite */; };
 		9FF2642119B8183800279DFA /* NSMutableArray+KSSorted.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF2642019B8183800279DFA /* NSMutableArray+KSSorted.m */; };
+		9FF2642B19B837FE00279DFA /* CarInfoForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF2642A19B837FE00279DFA /* CarInfoForm.m */; };
+		9FF2642E19B84C4500279DFA /* CarInfoStep4VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF2642D19B84C4500279DFA /* CarInfoStep4VC.m */; };
 		AAB8A60FE81F42F99560A39F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 938665F7C1694F6E96F90DAF /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -108,6 +110,10 @@
 		9FF2641D19B7850100279DFA /* CarUsage.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = CarUsage.sqlite; path = "../../../../Library/Developer/Xcode/DerivedData/MasterData-dxkbguqhfjumbxclgvmqhbgxytss/Build/Products/Debug/CarUsage.sqlite"; sourceTree = "<group>"; };
 		9FF2641F19B8183800279DFA /* NSMutableArray+KSSorted.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+KSSorted.h"; sourceTree = "<group>"; };
 		9FF2642019B8183800279DFA /* NSMutableArray+KSSorted.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+KSSorted.m"; sourceTree = "<group>"; };
+		9FF2642919B837FE00279DFA /* CarInfoForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarInfoForm.h; sourceTree = "<group>"; };
+		9FF2642A19B837FE00279DFA /* CarInfoForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarInfoForm.m; sourceTree = "<group>"; };
+		9FF2642C19B84C4500279DFA /* CarInfoStep4VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarInfoStep4VC.h; sourceTree = "<group>"; };
+		9FF2642D19B84C4500279DFA /* CarInfoStep4VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarInfoStep4VC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +182,7 @@
 				9FF2642019B8183800279DFA /* NSMutableArray+KSSorted.m */,
 				9F4ECD0D19AE331A00D8DD8F /* Controller */,
 				9F5DC9CB19B0607D007AF905 /* Car Add Navigation Controllers */,
+				9FF2642519B834CC00279DFA /* Form Models */,
 				9F4ECCD519ADCE6200D8DD8F /* Core Data Model */,
 				9F4ECCA419ADCDE500D8DD8F /* Images.xcassets */,
 				9F4ECC9319ADCDE500D8DD8F /* Supporting Files */,
@@ -260,6 +267,8 @@
 				9F2941A919B480E600D68CF7 /* CarSeriesStep2TVC.m */,
 				9FB2C97619B5C9B80034631A /* CarModelsStep3TVC.h */,
 				9FB2C97719B5C9B80034631A /* CarModelsStep3TVC.m */,
+				9FF2642C19B84C4500279DFA /* CarInfoStep4VC.h */,
+				9FF2642D19B84C4500279DFA /* CarInfoStep4VC.m */,
 				9F2941AB19B4965800D68CF7 /* CarAddingConstant.h */,
 			);
 			name = Controller;
@@ -272,6 +281,16 @@
 				9F5DC9CD19B06126007AF905 /* ModelStepsNavController.m */,
 			);
 			name = "Car Add Navigation Controllers";
+			sourceTree = "<group>";
+		};
+		9FF2642519B834CC00279DFA /* Form Models */ = {
+			isa = PBXGroup;
+			children = (
+				9FF2642919B837FE00279DFA /* CarInfoForm.h */,
+				9FF2642A19B837FE00279DFA /* CarInfoForm.m */,
+			);
+			name = "Form Models";
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -420,8 +439,10 @@
 				9FF2640C19B61D4900279DFA /* Brands.m in Sources */,
 				9FAD70C619B4470C00B1064C /* CarUsage.xcdatamodel in Sources */,
 				9F4ECC9D19ADCDE500D8DD8F /* KSAppDelegate.m in Sources */,
+				9FF2642E19B84C4500279DFA /* CarInfoStep4VC.m in Sources */,
 				9FF2640F19B61D4900279DFA /* Cars.m in Sources */,
 				9F4ECC9919ADCDE500D8DD8F /* main.m in Sources */,
+				9FF2642B19B837FE00279DFA /* CarInfoForm.m in Sources */,
 				9FF2642119B8183800279DFA /* NSMutableArray+KSSorted.m in Sources */,
 				9FB2C97819B5C9B80034631A /* CarModelsStep3TVC.m in Sources */,
 				9FF2640619B61D4900279DFA /* Series.m in Sources */,

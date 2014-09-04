@@ -107,6 +107,9 @@
         insets.top += self.stepsBar.frame.size.height;
         
         [aViewController adaptToEdgeInsets:insets];
+        if ([aViewController.view isKindOfClass:[UIScrollView class]]) {
+            [((UIScrollView *)aViewController.view) setContentOffset:CGPointMake(0, -1 * insets.top) animated:YES];
+        }
     }
 }
 

@@ -7,9 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "FXForms.h"
 
-@interface CarInfoForm : NSObject <FXForm>
+@interface CarInfoForm : NSObject
 
 @property (nonatomic, strong) NSString *carStructure;
 @property (nonatomic, strong) NSString *engine;

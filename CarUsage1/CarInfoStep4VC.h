@@ -5,9 +5,9 @@
 //  Created by Kenneth on 9/4/14.
 //  Copyright (c) 2014 fatken. All rights reserved.
 //
+#import "XLForm.h"
+#import "XLFormViewController.h"
 
-#import "FXForms.h"
-
-@interface CarInfoStep4VC : FXFormViewController
+@interface CarInfoStep4VC : XLFormViewController
 
 @end

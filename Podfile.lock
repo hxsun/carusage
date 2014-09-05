@@ -1,17 +1,14 @@
 PODS:
-  - FXForms (1.1.6)
   - MagicalRecord (2.2):
     - MagicalRecord/Core
   - MagicalRecord/Core (2.2)
   - RMStepsController (1.0.1)
 
 DEPENDENCIES:
-  - FXForms
   - MagicalRecord
   - RMStepsController (~> 1.0.1)
 
 SPEC CHECKSUMS:
-  FXForms: 9387c60ee6f3e1c75e0f8998012acc1ce0ad8d0a
   MagicalRecord: 2b471584fc9e3137f3d0a56967917baa4979e224
   RMStepsController: 8ff91f169d884fdd834ad37007f553c7bed333eb
 

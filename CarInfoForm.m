@@ -10,6 +10,7 @@
 
 @implementation CarInfoForm
 
+/*
 - (NSArray *)fields {
     return @[
              
@@ -29,5 +30,6 @@
              ];
 
 }
+ */
 
 @end

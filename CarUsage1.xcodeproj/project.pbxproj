@@ -40,6 +40,11 @@
 		9F0065A419B8E05600222C7D /* XLFormValidationStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F00657B19B8E05600222C7D /* XLFormValidationStatus.m */; };
 		9F0065A519B8E05600222C7D /* XLFormValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F00657D19B8E05600222C7D /* XLFormValidator.m */; };
 		9F0065A619B8E05600222C7D /* XLForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F00658019B8E05600222C7D /* XLForm.m */; };
+		9F0065AC19BA015900222C7D /* BinaryStringHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0065AB19BA015900222C7D /* BinaryStringHandler.m */; };
+		9F0065AE19BA0F8500222C7D /* BinaryStringHandlerTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0065AD19BA0F8500222C7D /* BinaryStringHandlerTestCase.m */; };
+		9F0065B219BA104F00222C7D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F0065B119BA104F00222C7D /* libPods.a */; };
+		9F0065B519BA198100222C7D /* MaintenanceRule.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0065B419BA198100222C7D /* MaintenanceRule.m */; };
+		9F0065B719BABA4800222C7D /* MaintenanceRuleTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0065B619BABA4800222C7D /* MaintenanceRuleTestCase.m */; };
 		9F2941AA19B480E600D68CF7 /* CarSeriesStep2TVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F2941A919B480E600D68CF7 /* CarSeriesStep2TVC.m */; };
 		9F29421919B54BDD00D68CF7 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F29421819B54BDD00D68CF7 /* SWRevealViewController.m */; };
 		9F4ECC8D19ADCDE500D8DD8F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F4ECC8C19ADCDE500D8DD8F /* Foundation.framework */; };
@@ -70,7 +75,6 @@
 		9FF2641219B61D4900279DFA /* Components.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF2641119B61D4900279DFA /* Components.m */; };
 		9FF2641E19B7850200279DFA /* CarUsage.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 9FF2641D19B7850100279DFA /* CarUsage.sqlite */; };
 		9FF2642119B8183800279DFA /* NSMutableArray+KSSorted.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF2642019B8183800279DFA /* NSMutableArray+KSSorted.m */; };
-		9FF2642B19B837FE00279DFA /* CarInfoForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF2642A19B837FE00279DFA /* CarInfoForm.m */; };
 		9FF2642E19B84C4500279DFA /* CarInfoStep4VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF2642D19B84C4500279DFA /* CarInfoStep4VC.m */; };
 		AAB8A60FE81F42F99560A39F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 938665F7C1694F6E96F90DAF /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -157,6 +161,14 @@
 		9F00657E19B8E05600222C7D /* XLFormValidatorProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLFormValidatorProtocol.h; sourceTree = "<group>"; };
 		9F00657F19B8E05600222C7D /* XLForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLForm.h; sourceTree = "<group>"; };
 		9F00658019B8E05600222C7D /* XLForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLForm.m; sourceTree = "<group>"; };
+		9F0065AA19BA015900222C7D /* BinaryStringHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BinaryStringHandler.h; sourceTree = "<group>"; };
+		9F0065AB19BA015900222C7D /* BinaryStringHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BinaryStringHandler.m; sourceTree = "<group>"; };
+		9F0065AD19BA0F8500222C7D /* BinaryStringHandlerTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BinaryStringHandlerTestCase.m; sourceTree = "<group>"; };
+		9F0065AF19BA102600222C7D /* libPods-MagicalRecord.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-MagicalRecord.a"; path = "Pods/build/Debug-iphoneos/libPods-MagicalRecord.a"; sourceTree = "<group>"; };
+		9F0065B119BA104F00222C7D /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/build/Debug-iphoneos/libPods.a"; sourceTree = "<group>"; };
+		9F0065B319BA198100222C7D /* MaintenanceRule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaintenanceRule.h; sourceTree = "<group>"; };
+		9F0065B419BA198100222C7D /* MaintenanceRule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaintenanceRule.m; sourceTree = "<group>"; };
+		9F0065B619BABA4800222C7D /* MaintenanceRuleTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaintenanceRuleTestCase.m; sourceTree = "<group>"; };
 		9F2941A819B480E600D68CF7 /* CarSeriesStep2TVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarSeriesStep2TVC.h; sourceTree = "<group>"; };
 		9F2941A919B480E600D68CF7 /* CarSeriesStep2TVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarSeriesStep2TVC.m; sourceTree = "<group>"; };
 		9F2941AB19B4965800D68CF7 /* CarAddingConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarAddingConstant.h; sourceTree = "<group>"; };
@@ -212,8 +224,6 @@
 		9FF2641D19B7850100279DFA /* CarUsage.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = CarUsage.sqlite; path = "../../../../Library/Developer/Xcode/DerivedData/MasterData-dxkbguqhfjumbxclgvmqhbgxytss/Build/Products/Debug/CarUsage.sqlite"; sourceTree = "<group>"; };
 		9FF2641F19B8183800279DFA /* NSMutableArray+KSSorted.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+KSSorted.h"; sourceTree = "<group>"; };
 		9FF2642019B8183800279DFA /* NSMutableArray+KSSorted.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+KSSorted.m"; sourceTree = "<group>"; };
-		9FF2642919B837FE00279DFA /* CarInfoForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarInfoForm.h; sourceTree = "<group>"; };
-		9FF2642A19B837FE00279DFA /* CarInfoForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarInfoForm.m; sourceTree = "<group>"; };
 		9FF2642C19B84C4500279DFA /* CarInfoStep4VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarInfoStep4VC.h; sourceTree = "<group>"; };
 		9FF2642D19B84C4500279DFA /* CarInfoStep4VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarInfoStep4VC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -234,6 +244,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F0065B219BA104F00222C7D /* libPods.a in Frameworks */,
 				9F4ECCAC19ADCDE500D8DD8F /* XCTest.framework in Frameworks */,
 				9F4ECCAE19ADCDE600D8DD8F /* UIKit.framework in Frameworks */,
 				9F4ECCAD19ADCDE600D8DD8F /* Foundation.framework in Frameworks */,
@@ -375,6 +386,17 @@
 			path = Validation;
 			sourceTree = "<group>";
 		};
+		9F0065A919BA012300222C7D /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				9F0065AA19BA015900222C7D /* BinaryStringHandler.h */,
+				9F0065AB19BA015900222C7D /* BinaryStringHandler.m */,
+				9F0065B319BA198100222C7D /* MaintenanceRule.h */,
+				9F0065B419BA198100222C7D /* MaintenanceRule.m */,
+			);
+			name = Utility;
+			sourceTree = "<group>";
+		};
 		9F4ECC8019ADCDE500D8DD8F = {
 			isa = PBXGroup;
 			children = (
@@ -398,6 +420,8 @@
 		9F4ECC8B19ADCDE500D8DD8F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9F0065B119BA104F00222C7D /* libPods.a */,
+				9F0065AF19BA102600222C7D /* libPods-MagicalRecord.a */,
 				9F4ECC8C19ADCDE500D8DD8F /* Foundation.framework */,
 				9F4ECC8E19ADCDE500D8DD8F /* CoreGraphics.framework */,
 				9F4ECC9019ADCDE500D8DD8F /* UIKit.framework */,
@@ -410,6 +434,7 @@
 		9F4ECC9219ADCDE500D8DD8F /* CarUsage1 */ = {
 			isa = PBXGroup;
 			children = (
+				9F0065A919BA012300222C7D /* Utility */,
 				9F00653019B8E05500222C7D /* XLForm */,
 				9F4ECCD919ADCEA900D8DD8F /* Application Delegate */,
 				9F4ECC9E19ADCDE500D8DD8F /* Main.storyboard */,
@@ -417,7 +442,6 @@
 				9FF2642019B8183800279DFA /* NSMutableArray+KSSorted.m */,
 				9F4ECD0D19AE331A00D8DD8F /* Controller */,
 				9F5DC9CB19B0607D007AF905 /* Car Add Navigation Controllers */,
-				9FF2642519B834CC00279DFA /* Form Models */,
 				9F4ECCD519ADCE6200D8DD8F /* Core Data Model */,
 				9F4ECCA419ADCDE500D8DD8F /* Images.xcassets */,
 				9F4ECC9319ADCDE500D8DD8F /* Supporting Files */,
@@ -441,6 +465,8 @@
 			children = (
 				9F4ECCB719ADCDE600D8DD8F /* CarUsage1Tests.m */,
 				9F4ECCB219ADCDE600D8DD8F /* Supporting Files */,
+				9F0065AD19BA0F8500222C7D /* BinaryStringHandlerTestCase.m */,
+				9F0065B619BABA4800222C7D /* MaintenanceRuleTestCase.m */,
 			);
 			path = CarUsage1Tests;
 			sourceTree = "<group>";
@@ -516,16 +542,6 @@
 				9F5DC9CD19B06126007AF905 /* ModelStepsNavController.m */,
 			);
 			name = "Car Add Navigation Controllers";
-			sourceTree = "<group>";
-		};
-		9FF2642519B834CC00279DFA /* Form Models */ = {
-			isa = PBXGroup;
-			children = (
-				9FF2642919B837FE00279DFA /* CarInfoForm.h */,
-				9FF2642A19B837FE00279DFA /* CarInfoForm.m */,
-			);
-			name = "Form Models";
-			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -677,6 +693,7 @@
 				9F00659919B8E05600222C7D /* XLFormViewController.m in Sources */,
 				9F00659F19B8E05600222C7D /* UIView+XLFormAdditions.m in Sources */,
 				9F00658B19B8E05600222C7D /* XLFormDateCell.m in Sources */,
+				9F0065B519BA198100222C7D /* MaintenanceRule.m in Sources */,
 				9FF2640019B61D4800279DFA /* MaintenanceHistory.m in Sources */,
 				9F00659219B8E05600222C7D /* XLFormSliderCell.m in Sources */,
 				9F0065A019B8E05600222C7D /* XLFormRightDetailCell.m in Sources */,
@@ -695,7 +712,6 @@
 				9FF2640F19B61D4900279DFA /* Cars.m in Sources */,
 				9F0065A619B8E05600222C7D /* XLForm.m in Sources */,
 				9F4ECC9919ADCDE500D8DD8F /* main.m in Sources */,
-				9FF2642B19B837FE00279DFA /* CarInfoForm.m in Sources */,
 				9F0065A519B8E05600222C7D /* XLFormValidator.m in Sources */,
 				9F00659319B8E05600222C7D /* XLFormStepCounterCell.m in Sources */,
 				9F00659119B8E05600222C7D /* XLFormSelectorCell.m in Sources */,
@@ -709,6 +725,7 @@
 				9F00658819B8E05600222C7D /* XLFormBaseCell.m in Sources */,
 				9FF2640619B61D4900279DFA /* Series.m in Sources */,
 				9F00658A19B8E05600222C7D /* XLFormCheckCell.m in Sources */,
+				9F0065AC19BA015900222C7D /* BinaryStringHandler.m in Sources */,
 				9FF2641219B61D4900279DFA /* Components.m in Sources */,
 				9F00658919B8E05600222C7D /* XLFormButtonCell.m in Sources */,
 				9FF2640919B61D4900279DFA /* Models.m in Sources */,
@@ -724,6 +741,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F0065B719BABA4800222C7D /* MaintenanceRuleTestCase.m in Sources */,
+				9F0065AE19BA0F8500222C7D /* BinaryStringHandlerTestCase.m in Sources */,
 				9F4ECCB819ADCDE600D8DD8F /* CarUsage1Tests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -886,6 +905,7 @@
 		};
 		9F4ECCBF19ADCDE600D8DD8F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 115909BD0D104F8D9E365C0C /* Pods.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CarUsage1.app/CarUsage1";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -900,6 +920,10 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "CarUsage1Tests/CarUsage1Tests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -908,6 +932,7 @@
 		};
 		9F4ECCC019ADCDE600D8DD8F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 115909BD0D104F8D9E365C0C /* Pods.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CarUsage1.app/CarUsage1";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -918,6 +943,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CarUsage1/CarUsage1-Prefix.pch";
 				INFOPLIST_FILE = "CarUsage1Tests/CarUsage1Tests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;

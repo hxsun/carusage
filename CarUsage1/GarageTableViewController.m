@@ -75,7 +75,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Car Cell"];
     
     Cars *car = [ownedCars objectAtIndex:indexPath.row];
-    cell.textLabel.text = car.whichType.name;
+    cell.textLabel.text = car.whichModel.name;
     cell.detailTextLabel.text = [NSString stringWithFormat:@"Bought at %@",
                                  [NSDateFormatter localizedStringFromDate:car.boughtDate
                                                                 dateStyle:NSDateFormatterShortStyle

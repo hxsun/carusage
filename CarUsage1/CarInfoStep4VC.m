@@ -19,30 +19,18 @@ NSString *const kSubmitButton = @"submitButton";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    DLog(@"View did load");
     
-    [self initializeForm:self.stepsController.results];
+    [self initializeForm];
     self.tableView.sectionHeaderHeight = 44;
 }
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self){
-        [self initializeForm:self.stepsController.results];
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    if (self.form) {
+        [self updateFormValues:self.stepsController.results];
     }
-    return self;
 }
-
-/*
--(id)initWithCoder:(NSCoder *)aDecoder
-{
-    self = [super initWithCoder:aDecoder];
-    if (self){
-        [self initializeForm:self.stepsController.results];
-    }
-    return self;
-}
- */
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     return 30;
@@ -56,11 +44,27 @@ NSString *const kSubmitButton = @"submitButton";
     return [[UIView alloc] initWithFrame:CGRectZero];
 }
 
--(void)initializeForm:(NSDictionary *)sessionDictionary
-{
+- (void)updateFormValues:(NSDictionary *)sessionDictionary {
+    if (!self.form) {
+        [self initializeForm];
+    }
     Models *model = sessionDictionary[KEY_SELECTED_MODEL];
+    [self.form formRowWithTag:kCarStructure].value = model.carStructure;
+    [self.form formRowWithTag:kEngine].value = model.engine;
+    [self.form formRowWithTag:kDriveType].value = model.driveType;
+    [self.form formRowWithTag:kTransmissionType].value = model.transmissionType;
+    [self.form formRowWithTag:kWarranty].value = model.warranty;
+    [self.form formRowWithTag:kMileage].value = 0;
+    [self.form formRowWithTag:kDateOfPurchase].value = [NSDate date];
     
-    XLFormDescriptor * formDescriptor = [XLFormDescriptor formDescriptorWithTitle:@"Text Fields"];
+    [self.tableView reloadData];
+}
+
+-(void)initializeForm
+{
+    
+    
+    XLFormDescriptor * formDescriptor = [XLFormDescriptor formDescriptorWithTitle:@"CarInfoStep4"];
     XLFormSectionDescriptor * section;
     XLFormRowDescriptor * row;
     
@@ -73,30 +77,22 @@ NSString *const kSubmitButton = @"submitButton";
     
     // Car Structure
     row = [XLFormRowDescriptor formRowDescriptorWithTag:kCarStructure rowType:XLFormRowDescriptorTypeInfo title:@"车身结构"];
-    // row.disabled = YES;
     [section addFormRow:row];
     
     // Engine
     row = [XLFormRowDescriptor formRowDescriptorWithTag:kEngine rowType:XLFormRowDescriptorTypeInfo title:@"发动机"];
-    // row.disabled = YES;
-    row.value = model.engine;
     [section addFormRow:row];
     
     // Drive type
     row = [XLFormRowDescriptor formRowDescriptorWithTag:kDriveType rowType:XLFormRowDescriptorTypeInfo title:@"驱动方式"];
-    // row.disabled = YES;
-    row.value = model.driveType;
     [section addFormRow:row];
     
     // Transmission type
     row = [XLFormRowDescriptor formRowDescriptorWithTag:kTransmissionType rowType:XLFormRowDescriptorTypeInfo title:@"变速箱"];
-    // row.disabled = YES;
-    row.value = model.transmissionType;
     [section addFormRow:row];
 
     // Warranty
     row = [XLFormRowDescriptor formRowDescriptorWithTag:kWarranty rowType:XLFormRowDescriptorTypeInfo title:@"整车质保"];
-    // row.disabled = YES;
     [section addFormRow:row];
 
     
@@ -107,7 +103,7 @@ NSString *const kSubmitButton = @"submitButton";
     
     // Date of purchase
     row = [XLFormRowDescriptor formRowDescriptorWithTag:kDateOfPurchase rowType:XLFormRowDescriptorTypeDate title:@"购车日期"];
-    row.value = [NSDate date];
+    // [row.cellConfigAtConfigure setObject:[NSDate date] forKey:@"datePi"];
     [section addFormRow:row];
     
     // Mileage
@@ -124,7 +120,6 @@ NSString *const kSubmitButton = @"submitButton";
     [section addFormRow:row];
     
     section = [XLFormSectionDescriptor formSectionWithTitle:@" "];
-    // section.footerTitle = @"Button will show a message when Switch is ON";
     [formDescriptor addFormSection:section];
     
     // Button

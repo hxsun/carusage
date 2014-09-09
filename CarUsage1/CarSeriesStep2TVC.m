@@ -21,29 +21,14 @@
 
 @implementation CarSeriesStep2TVC
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
     
     dataDictionary = [NSMutableDictionary new];
     sectionTitles = [NSMutableArray new];
     
     [self refreshData];
+
 }
 
 - (void)refreshData {
@@ -51,11 +36,8 @@
     [sectionTitles removeAllObjects];
     
     Brands *selectedBrand = self.stepsController.results[KEY_SELECTED_BRAND];
-    DLog(@"Get selected brand on step 2. %@", selectedBrand.name);
     
     if (!selectedBrand) {
-        DLog(@"Oops, the selectedBrand is empty, will return to the previous step.");
-        
         [self.stepsController showPreviousStep];
         return;
     }
@@ -65,17 +47,12 @@
         DLog(@"Show series under single brand without any subbrands.");
         [sectionTitles addObject:selectedBrand.name];
         
-        //NSPredicate *predicate = [NSPredicate predicateWithFormat:@"brand = %@", selectedBrand];
-        // NSArray *series = [Series MR_findAllSortedBy:@"name" ascending:YES withPredicate:predicate];
         [dataDictionary setObject:[selectedBrand.series allObjects] forKey:selectedBrand.name];
     } else {
         // Search for the subbrands with selected brand;
         DLog(@"Show series under parent brand with subbrands.");
         for (Brands *subbrand in selectedBrand.childBrands) {
             [sectionTitles addObject:subbrand.name];
-            
-            // NSPredicate *predicate = [NSPredicate predicateWithFormat:@"brand = %@", subbrand];
-            //NSArray *series = [Series MR_findAllSortedBy:@"name" ascending:YES withPredicate:predicate];
             [dataDictionary setObject:[subbrand.series allObjects] forKey:subbrand.name];
         }
     }
@@ -171,45 +148,5 @@
     
     [self.stepsController showNextStep];
 }
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

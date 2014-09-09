@@ -2,7 +2,7 @@
 //  Cars.m
 //  CarUsage1
 //
-//  Created by Kenneth on 9/2/14.
+//  Created by Kenneth on 9/8/14.
 //  Copyright (c) 2014 fatken. All rights reserved.
 //
 
@@ -18,8 +18,9 @@
 @dynamic boughtDate;
 @dynamic deleted;
 @dynamic id;
+@dynamic initialMilage;
 @dynamic hasMaintenanceHistories;
 @dynamic hasUpdateHistories;
-@dynamic whichType;
+@dynamic whichModel;
 
 @end

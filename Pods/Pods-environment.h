@@ -18,6 +18,12 @@
 #define COCOAPODS_VERSION_MINOR_MagicalRecord_Core 2
 #define COCOAPODS_VERSION_PATCH_MagicalRecord_Core 0
 
+// PXAlertView
+#define COCOAPODS_POD_AVAILABLE_PXAlertView
+#define COCOAPODS_VERSION_MAJOR_PXAlertView 0
+#define COCOAPODS_VERSION_MINOR_PXAlertView 1
+#define COCOAPODS_VERSION_PATCH_PXAlertView 0
+
 // RMStepsController
 #define COCOAPODS_POD_AVAILABLE_RMStepsController
 #define COCOAPODS_VERSION_MAJOR_RMStepsController 1

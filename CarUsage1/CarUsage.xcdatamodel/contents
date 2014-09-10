@@ -14,10 +14,9 @@
     </entity>
     <entity name="Cars" representedClassName="Cars" syncable="YES">
         <attribute name="addedDate" optional="YES" attributeType="Date" syncable="YES"/>
-        <attribute name="boughtDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="deleted" optional="YES" attributeType="Boolean" syncable="YES"/>
-        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="initialMilage" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="purchaseDate" optional="YES" attributeType="Date" syncable="YES"/>
         <relationship name="hasMaintenanceHistories" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MaintenanceHistory" inverseName="maintenanceTakenByCar" inverseEntity="MaintenanceHistory" syncable="YES"/>
         <relationship name="hasUpdateHistories" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="UpdateHistory" inverseName="updateTakenByCar" inverseEntity="UpdateHistory" syncable="YES"/>
         <relationship name="whichModel" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Models" inverseName="typeOfCar" inverseEntity="Models" syncable="YES"/>
@@ -60,7 +59,7 @@
     </entity>
     <elements>
         <element name="Brands" positionX="-225" positionY="-10" width="128" height="193"/>
-        <element name="Cars" positionX="-36" positionY="374" width="128" height="163"/>
+        <element name="Cars" positionX="-36" positionY="374" width="128" height="28"/>
         <element name="Components" positionX="133" positionY="162" width="128" height="88"/>
         <element name="MaintenanceHistory" positionX="133" positionY="279" width="128" height="88"/>
         <element name="Models" positionX="-38" positionY="162" width="128" height="208"/>

@@ -53,9 +53,9 @@
         UILabel *numberLabel = self.numberLabel;
         NSDictionary *bindingsDict = NSDictionaryOfVariableBindings(titleLabel, numberLabel);
         
-        [_stepView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|-(40)-[titleLabel]-(0)-|" options:0 metrics:nil views:bindingsDict]];
+        [_stepView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|-(42)-[titleLabel]-(0)-|" options:0 metrics:nil views:bindingsDict]];
         [_stepView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(0)-[titleLabel]-(0)-|" options:0 metrics:nil views:bindingsDict]];
-        [_stepView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|-(11)-[numberLabel]-(9)-[titleLabel]" options:0 metrics:nil views:bindingsDict]];
+        [_stepView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|-(11)-[numberLabel]-(11)-[titleLabel]" options:0 metrics:nil views:bindingsDict]];
         [_stepView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(0)-[numberLabel]-(0)-|" options:0 metrics:nil views:bindingsDict]];
     }
     

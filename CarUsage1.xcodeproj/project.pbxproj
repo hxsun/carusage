@@ -45,7 +45,6 @@
 		9F0065B219BA104F00222C7D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F0065B119BA104F00222C7D /* libPods.a */; };
 		9F0065B519BA198100222C7D /* MaintenanceRule.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0065B419BA198100222C7D /* MaintenanceRule.m */; };
 		9F0065B719BABA4800222C7D /* MaintenanceRuleTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0065B619BABA4800222C7D /* MaintenanceRuleTestCase.m */; };
-		9F1FD17219BDAC8C00B9887E /* CarUsage.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 9F1FD17119BDAC8C00B9887E /* CarUsage.sqlite */; };
 		9F2941AA19B480E600D68CF7 /* CarSeriesStep2TVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F2941A919B480E600D68CF7 /* CarSeriesStep2TVC.m */; };
 		9F29421919B54BDD00D68CF7 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F29421819B54BDD00D68CF7 /* SWRevealViewController.m */; };
 		9F4ECC8D19ADCDE500D8DD8F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F4ECC8C19ADCDE500D8DD8F /* Foundation.framework */; };
@@ -65,13 +64,14 @@
 		9F4ECD1319AE37F900D8DD8F /* MenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4ECD1219AE37F900D8DD8F /* MenuTableViewController.m */; };
 		9F5DC9CE19B06126007AF905 /* ModelStepsNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5DC9CD19B06126007AF905 /* ModelStepsNavController.m */; };
 		9F5DCAF519B1D991007AF905 /* CarBrandsStep1TVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5DCAF419B1D991007AF905 /* CarBrandsStep1TVC.m */; };
-		9F8E854C19BDAA5E004D3B7B /* Brands.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8E854B19BDAA5E004D3B7B /* Brands.m */; };
-		9F8E854F19BDAA5F004D3B7B /* Models.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8E854E19BDAA5F004D3B7B /* Models.m */; };
-		9F8E855219BDAA5F004D3B7B /* MaintenanceHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8E855119BDAA5F004D3B7B /* MaintenanceHistory.m */; };
-		9F8E855519BDAA5F004D3B7B /* Cars.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8E855419BDAA5F004D3B7B /* Cars.m */; };
-		9F8E855819BDAA5F004D3B7B /* Components.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8E855719BDAA5F004D3B7B /* Components.m */; };
-		9F8E855B19BDAA5F004D3B7B /* UpdateHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8E855A19BDAA5F004D3B7B /* UpdateHistory.m */; };
-		9F8E855E19BDAA5F004D3B7B /* Series.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8E855D19BDAA5F004D3B7B /* Series.m */; };
+		9F5F7B7C19BF4911009E84CF /* Cars.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5F7B7B19BF4911009E84CF /* Cars.m */; };
+		9F5F7B7F19BF4912009E84CF /* UpdateHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5F7B7E19BF4912009E84CF /* UpdateHistory.m */; };
+		9F5F7B8219BF4912009E84CF /* MaintenanceHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5F7B8119BF4912009E84CF /* MaintenanceHistory.m */; };
+		9F5F7B8519BF4912009E84CF /* Models.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5F7B8419BF4912009E84CF /* Models.m */; };
+		9F5F7B8819BF4912009E84CF /* Series.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5F7B8719BF4912009E84CF /* Series.m */; };
+		9F5F7B8B19BF4912009E84CF /* Components.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5F7B8A19BF4912009E84CF /* Components.m */; };
+		9F5F7B8E19BF4912009E84CF /* Brands.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5F7B8D19BF4912009E84CF /* Brands.m */; };
+		9F5F7B9019BF4AFE009E84CF /* CarUsage.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 9F5F7B8F19BF4AFE009E84CF /* CarUsage.sqlite */; };
 		9FAD70C619B4470C00B1064C /* CarUsage.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 9FAD70B919B4470C00B1064C /* CarUsage.xcdatamodel */; };
 		9FB2C97819B5C9B80034631A /* CarModelsStep3TVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FB2C97719B5C9B80034631A /* CarModelsStep3TVC.m */; };
 		9FF2642119B8183800279DFA /* NSMutableArray+KSSorted.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF2642019B8183800279DFA /* NSMutableArray+KSSorted.m */; };
@@ -169,7 +169,6 @@
 		9F0065B319BA198100222C7D /* MaintenanceRule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaintenanceRule.h; sourceTree = "<group>"; };
 		9F0065B419BA198100222C7D /* MaintenanceRule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaintenanceRule.m; sourceTree = "<group>"; };
 		9F0065B619BABA4800222C7D /* MaintenanceRuleTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaintenanceRuleTestCase.m; sourceTree = "<group>"; };
-		9F1FD17119BDAC8C00B9887E /* CarUsage.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = CarUsage.sqlite; path = "../../../../Library/Developer/Xcode/DerivedData/MasterData-dxkbguqhfjumbxclgvmqhbgxytss/Build/Products/Debug/CarUsage.sqlite"; sourceTree = "<group>"; };
 		9F2941A819B480E600D68CF7 /* CarSeriesStep2TVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarSeriesStep2TVC.h; sourceTree = "<group>"; };
 		9F2941A919B480E600D68CF7 /* CarSeriesStep2TVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarSeriesStep2TVC.m; sourceTree = "<group>"; };
 		9F2941AB19B4965800D68CF7 /* CarAddingConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarAddingConstant.h; sourceTree = "<group>"; };
@@ -205,20 +204,21 @@
 		9F5DC9CD19B06126007AF905 /* ModelStepsNavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelStepsNavController.m; sourceTree = "<group>"; };
 		9F5DCAF319B1D991007AF905 /* CarBrandsStep1TVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarBrandsStep1TVC.h; sourceTree = "<group>"; };
 		9F5DCAF419B1D991007AF905 /* CarBrandsStep1TVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarBrandsStep1TVC.m; sourceTree = "<group>"; };
-		9F8E854A19BDAA5E004D3B7B /* Brands.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Brands.h; sourceTree = "<group>"; };
-		9F8E854B19BDAA5E004D3B7B /* Brands.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Brands.m; sourceTree = "<group>"; };
-		9F8E854D19BDAA5F004D3B7B /* Models.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Models.h; sourceTree = "<group>"; };
-		9F8E854E19BDAA5F004D3B7B /* Models.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Models.m; sourceTree = "<group>"; };
-		9F8E855019BDAA5F004D3B7B /* MaintenanceHistory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaintenanceHistory.h; sourceTree = "<group>"; };
-		9F8E855119BDAA5F004D3B7B /* MaintenanceHistory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaintenanceHistory.m; sourceTree = "<group>"; };
-		9F8E855319BDAA5F004D3B7B /* Cars.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cars.h; sourceTree = "<group>"; };
-		9F8E855419BDAA5F004D3B7B /* Cars.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cars.m; sourceTree = "<group>"; };
-		9F8E855619BDAA5F004D3B7B /* Components.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Components.h; sourceTree = "<group>"; };
-		9F8E855719BDAA5F004D3B7B /* Components.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Components.m; sourceTree = "<group>"; };
-		9F8E855919BDAA5F004D3B7B /* UpdateHistory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateHistory.h; sourceTree = "<group>"; };
-		9F8E855A19BDAA5F004D3B7B /* UpdateHistory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateHistory.m; sourceTree = "<group>"; };
-		9F8E855C19BDAA5F004D3B7B /* Series.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Series.h; sourceTree = "<group>"; };
-		9F8E855D19BDAA5F004D3B7B /* Series.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Series.m; sourceTree = "<group>"; };
+		9F5F7B7A19BF4911009E84CF /* Cars.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cars.h; sourceTree = "<group>"; };
+		9F5F7B7B19BF4911009E84CF /* Cars.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cars.m; sourceTree = "<group>"; };
+		9F5F7B7D19BF4912009E84CF /* UpdateHistory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateHistory.h; sourceTree = "<group>"; };
+		9F5F7B7E19BF4912009E84CF /* UpdateHistory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateHistory.m; sourceTree = "<group>"; };
+		9F5F7B8019BF4912009E84CF /* MaintenanceHistory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaintenanceHistory.h; sourceTree = "<group>"; };
+		9F5F7B8119BF4912009E84CF /* MaintenanceHistory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaintenanceHistory.m; sourceTree = "<group>"; };
+		9F5F7B8319BF4912009E84CF /* Models.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Models.h; sourceTree = "<group>"; };
+		9F5F7B8419BF4912009E84CF /* Models.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Models.m; sourceTree = "<group>"; };
+		9F5F7B8619BF4912009E84CF /* Series.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Series.h; sourceTree = "<group>"; };
+		9F5F7B8719BF4912009E84CF /* Series.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Series.m; sourceTree = "<group>"; };
+		9F5F7B8919BF4912009E84CF /* Components.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Components.h; sourceTree = "<group>"; };
+		9F5F7B8A19BF4912009E84CF /* Components.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Components.m; sourceTree = "<group>"; };
+		9F5F7B8C19BF4912009E84CF /* Brands.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Brands.h; sourceTree = "<group>"; };
+		9F5F7B8D19BF4912009E84CF /* Brands.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Brands.m; sourceTree = "<group>"; };
+		9F5F7B8F19BF4AFE009E84CF /* CarUsage.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = CarUsage.sqlite; path = "../../../../Library/Developer/Xcode/DerivedData/MasterData-dxkbguqhfjumbxclgvmqhbgxytss/Build/Products/Debug/CarUsage.sqlite"; sourceTree = "<group>"; };
 		9FAD70B919B4470C00B1064C /* CarUsage.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CarUsage.xcdatamodel; sourceTree = "<group>"; };
 		9FB2C97619B5C9B80034631A /* CarModelsStep3TVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarModelsStep3TVC.h; sourceTree = "<group>"; };
 		9FB2C97719B5C9B80034631A /* CarModelsStep3TVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarModelsStep3TVC.m; sourceTree = "<group>"; };
@@ -483,22 +483,22 @@
 		9F4ECCD519ADCE6200D8DD8F /* Core Data Model */ = {
 			isa = PBXGroup;
 			children = (
-				9F1FD17119BDAC8C00B9887E /* CarUsage.sqlite */,
+				9F5F7B8F19BF4AFE009E84CF /* CarUsage.sqlite */,
 				9FAD70B919B4470C00B1064C /* CarUsage.xcdatamodel */,
-				9F8E854A19BDAA5E004D3B7B /* Brands.h */,
-				9F8E854B19BDAA5E004D3B7B /* Brands.m */,
-				9F8E854D19BDAA5F004D3B7B /* Models.h */,
-				9F8E854E19BDAA5F004D3B7B /* Models.m */,
-				9F8E855019BDAA5F004D3B7B /* MaintenanceHistory.h */,
-				9F8E855119BDAA5F004D3B7B /* MaintenanceHistory.m */,
-				9F8E855319BDAA5F004D3B7B /* Cars.h */,
-				9F8E855419BDAA5F004D3B7B /* Cars.m */,
-				9F8E855619BDAA5F004D3B7B /* Components.h */,
-				9F8E855719BDAA5F004D3B7B /* Components.m */,
-				9F8E855919BDAA5F004D3B7B /* UpdateHistory.h */,
-				9F8E855A19BDAA5F004D3B7B /* UpdateHistory.m */,
-				9F8E855C19BDAA5F004D3B7B /* Series.h */,
-				9F8E855D19BDAA5F004D3B7B /* Series.m */,
+				9F5F7B8C19BF4912009E84CF /* Brands.h */,
+				9F5F7B8D19BF4912009E84CF /* Brands.m */,
+				9F5F7B8919BF4912009E84CF /* Components.h */,
+				9F5F7B8A19BF4912009E84CF /* Components.m */,
+				9F5F7B8619BF4912009E84CF /* Series.h */,
+				9F5F7B8719BF4912009E84CF /* Series.m */,
+				9F5F7B8319BF4912009E84CF /* Models.h */,
+				9F5F7B8419BF4912009E84CF /* Models.m */,
+				9F5F7B8019BF4912009E84CF /* MaintenanceHistory.h */,
+				9F5F7B8119BF4912009E84CF /* MaintenanceHistory.m */,
+				9F5F7B7D19BF4912009E84CF /* UpdateHistory.h */,
+				9F5F7B7E19BF4912009E84CF /* UpdateHistory.m */,
+				9F5F7B7A19BF4911009E84CF /* Cars.h */,
+				9F5F7B7B19BF4911009E84CF /* Cars.m */,
 			);
 			name = "Core Data Model";
 			sourceTree = "<group>";
@@ -594,6 +594,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = fatken;
 				TargetAttributes = {
+					9F4ECC8819ADCDE500D8DD8F = {
+						DevelopmentTeam = TFP3R5L3H6;
+					};
 					9F4ECCA919ADCDE500D8DD8F = {
 						TestTargetID = 9F4ECC8819ADCDE500D8DD8F;
 					};
@@ -625,7 +628,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F1FD17219BDAC8C00B9887E /* CarUsage.sqlite in Resources */,
+				9F5F7B9019BF4AFE009E84CF /* CarUsage.sqlite in Resources */,
 				9F4ECCA519ADCDE500D8DD8F /* Images.xcassets in Resources */,
 				9F00658519B8E05600222C7D /* Localizable.strings in Resources */,
 				9F4ECC9719ADCDE500D8DD8F /* InfoPlist.strings in Resources */,
@@ -683,7 +686,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F5DCAF519B1D991007AF905 /* CarBrandsStep1TVC.m in Sources */,
-				9F8E855819BDAA5F004D3B7B /* Components.m in Sources */,
+				9F5F7B8B19BF4912009E84CF /* Components.m in Sources */,
 				9F2941AA19B480E600D68CF7 /* CarSeriesStep2TVC.m in Sources */,
 				9F00659519B8E05600222C7D /* XLFormTextFieldCell.m in Sources */,
 				9F00659019B8E05600222C7D /* XLFormSegmentedCell.m in Sources */,
@@ -694,11 +697,11 @@
 				9F00659919B8E05600222C7D /* XLFormViewController.m in Sources */,
 				9F00659F19B8E05600222C7D /* UIView+XLFormAdditions.m in Sources */,
 				9F00658B19B8E05600222C7D /* XLFormDateCell.m in Sources */,
+				9F5F7B8219BF4912009E84CF /* MaintenanceHistory.m in Sources */,
 				9F0065B519BA198100222C7D /* MaintenanceRule.m in Sources */,
-				9F8E855219BDAA5F004D3B7B /* MaintenanceHistory.m in Sources */,
 				9F00659219B8E05600222C7D /* XLFormSliderCell.m in Sources */,
+				9F5F7B8519BF4912009E84CF /* Models.m in Sources */,
 				9F0065A019B8E05600222C7D /* XLFormRightDetailCell.m in Sources */,
-				9F8E854F19BDAA5F004D3B7B /* Models.m in Sources */,
 				9F00659D19B8E05600222C7D /* NSArray+XLFormAdditions.m in Sources */,
 				9F0065A319B8E05600222C7D /* XLFormRegexValidator.m in Sources */,
 				9F0065A119B8E05600222C7D /* XLFormRightImageButton.m in Sources */,
@@ -708,21 +711,21 @@
 				9F0065A419B8E05600222C7D /* XLFormValidationStatus.m in Sources */,
 				9FAD70C619B4470C00B1064C /* CarUsage.xcdatamodel in Sources */,
 				9F4ECC9D19ADCDE500D8DD8F /* KSAppDelegate.m in Sources */,
-				9F8E855E19BDAA5F004D3B7B /* Series.m in Sources */,
-				9F8E855519BDAA5F004D3B7B /* Cars.m in Sources */,
+				9F5F7B8819BF4912009E84CF /* Series.m in Sources */,
+				9F5F7B7C19BF4911009E84CF /* Cars.m in Sources */,
 				9FF2642E19B84C4500279DFA /* CarInfoStep4VC.m in Sources */,
 				9F0065A619B8E05600222C7D /* XLForm.m in Sources */,
 				9F4ECC9919ADCDE500D8DD8F /* main.m in Sources */,
+				9F5F7B7F19BF4912009E84CF /* UpdateHistory.m in Sources */,
 				9F0065A519B8E05600222C7D /* XLFormValidator.m in Sources */,
-				9F8E855B19BDAA5F004D3B7B /* UpdateHistory.m in Sources */,
 				9F00659319B8E05600222C7D /* XLFormStepCounterCell.m in Sources */,
 				9F00659119B8E05600222C7D /* XLFormSelectorCell.m in Sources */,
 				9F00658F19B8E05600222C7D /* XLFormPickerCell.m in Sources */,
 				9FF2642119B8183800279DFA /* NSMutableArray+KSSorted.m in Sources */,
+				9F5F7B8E19BF4912009E84CF /* Brands.m in Sources */,
 				9FB2C97819B5C9B80034631A /* CarModelsStep3TVC.m in Sources */,
 				9F00658D19B8E05600222C7D /* XLFormInlineSelectorCell.m in Sources */,
 				9F00659B19B8E05600222C7D /* XLFormRowDescriptor.m in Sources */,
-				9F8E854C19BDAA5E004D3B7B /* Brands.m in Sources */,
 				9F00658C19B8E05600222C7D /* XLFormDatePickerCell.m in Sources */,
 				9F00659A19B8E05600222C7D /* XLFormDescriptor.m in Sources */,
 				9F00658819B8E05600222C7D /* XLFormBaseCell.m in Sources */,
@@ -881,10 +884,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CarUsage1/CarUsage1-Prefix.pch";
 				INFOPLIST_FILE = "CarUsage1/CarUsage1-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -895,10 +901,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CarUsage1/CarUsage1-Prefix.pch";
 				INFOPLIST_FILE = "CarUsage1/CarUsage1-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

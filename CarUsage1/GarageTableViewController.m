@@ -12,23 +12,22 @@
 #import "Models.h"
 #import "SWRevealViewController.h"
 
-@interface GarageTableViewController () {
-    NSMutableArray *ownedCars;
-}
+@interface GarageTableViewController ()
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *revealButtonItem;
+
+@property (strong, nonatomic) NSMutableArray *ownedCars;
 
 @end
 
 @implementation GarageTableViewController
 
 - (void)refreshData {
-    [ownedCars removeAllObjects];
+    [self.ownedCars removeAllObjects];
     
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"deleted != 1"];
-    NSArray *searchResults = [Cars MR_findAllSortedBy:@"addedDate" ascending:NO withPredicate:predicate];
-    [ownedCars addObjectsFromArray:searchResults];
-    
+    self.ownedCars = [[Cars MR_findAllWithPredicate:predicate] mutableCopy];
+
     [self.tableView reloadData];
 }
 
@@ -41,15 +40,23 @@
     return self;
 }
 
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     [self setUpRevealViewController];
+    
+    // [self refreshData];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self refreshData];
 }
 
 - (void)setUpRevealViewController {
@@ -72,12 +79,12 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Car Cell"];
+    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"Car Cell"];
     
-    Cars *car = [ownedCars objectAtIndex:indexPath.row];
+    Cars *car = [self.ownedCars objectAtIndex:indexPath.row];
     cell.textLabel.text = car.whichModel.name;
     cell.detailTextLabel.text = [NSString stringWithFormat:@"Bought at %@",
-                                 [NSDateFormatter localizedStringFromDate:car.boughtDate
+                                 [NSDateFormatter localizedStringFromDate:car.purchaseDate
                                                                 dateStyle:NSDateFormatterShortStyle
                                                                 timeStyle:NSDateFormatterNoStyle]];
     
@@ -85,9 +92,12 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [ownedCars count];
+    return [self.ownedCars count];
 }
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
 
 /*
 // Override to support conditional editing of the table view.

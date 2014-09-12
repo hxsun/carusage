@@ -10,4 +10,7 @@
 
 @interface CarInfoStep4VC : XLFormViewController
 
+@property (strong, nonatomic) NSDate *dateOfPurchase;
+@property (nonatomic, assign) NSUInteger mileage;
+
 @end

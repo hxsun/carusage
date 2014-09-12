@@ -24,6 +24,18 @@
 #define COCOAPODS_VERSION_MINOR_PXAlertView 1
 #define COCOAPODS_VERSION_PATCH_PXAlertView 0
 
+// RMDateSelectionViewController
+#define COCOAPODS_POD_AVAILABLE_RMDateSelectionViewController
+#define COCOAPODS_VERSION_MAJOR_RMDateSelectionViewController 1
+#define COCOAPODS_VERSION_MINOR_RMDateSelectionViewController 3
+#define COCOAPODS_VERSION_PATCH_RMDateSelectionViewController 0
+
+// RMPickerViewController
+#define COCOAPODS_POD_AVAILABLE_RMPickerViewController
+#define COCOAPODS_VERSION_MAJOR_RMPickerViewController 1
+#define COCOAPODS_VERSION_MINOR_RMPickerViewController 2
+#define COCOAPODS_VERSION_PATCH_RMPickerViewController 0
+
 // RMStepsController
 #define COCOAPODS_POD_AVAILABLE_RMStepsController
 #define COCOAPODS_VERSION_MAJOR_RMStepsController 1

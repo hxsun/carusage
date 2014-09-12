@@ -6,25 +6,26 @@
 #import "Models.h"
 #import "PXAlertView.h"
 #import "Cars.h"
-
-NSString *const kCarStructure = @"carStructure";
-NSString *const kEngine = @"engine";
-NSString *const kDriveType = @"driveType";
-NSString *const kTransmissionType = @"transmissionTYpe";
-NSString *const kWarranty = @"warranty";
-NSString *const kDateOfPurchase = @"dateOfPurchase";
-NSString *const kMileage = @"mileage";
-NSString *const kLoadInitialPackage = @"loadInitialPackage";
-NSString *const kSubmitButton = @"submitButton";
+#import "CarInfoStep4VC+PickerVC.h"
 
 @implementation CarInfoStep4VC
 
-- (void)viewDidLoad {
+@synthesize dateOfPurchase = _dateOfPurchase;
+@synthesize mileage = _mileage;
+
+- (void)viewDidLoad { 
     [super viewDidLoad];
-    DLog(@"View did load");
-    
+
     [self initializeForm];
-    self.tableView.sectionHeaderHeight = 44;
+    [self initializeData];
+    // self.tableView.sectionHeaderHeight = 44;
+}
+
+- (void)initializeData {
+    if (!self.dateOfPurchase) {
+        self.dateOfPurchase = [NSDate date];
+    }
+    self.mileage = 0;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -67,13 +68,15 @@ NSString *const kSubmitButton = @"submitButton";
         [self initializeForm];
     }
     Models *model = sessionDictionary[KEY_SELECTED_MODEL];
-    [self.form formRowWithTag:kCarStructure].value = model.carStructure;
-    [self.form formRowWithTag:kEngine].value = model.engine;
-    [self.form formRowWithTag:kDriveType].value = model.driveType;
-    [self.form formRowWithTag:kTransmissionType].value = model.transmissionType;
-    [self.form formRowWithTag:kWarranty].value = model.warranty;
-    [self.form formRowWithTag:kMileage].value = 0;
-    [self.form formRowWithTag:kDateOfPurchase].value = [NSDate date];
+    [self.form formRowWithTag:KEY_CAR_STRUCTURE].value = model.carStructure;
+    [self.form formRowWithTag:KEY_ENGINE].value = model.engine;
+    [self.form formRowWithTag:KEY_DRIVE_TYPE].value = model.driveType;
+    [self.form formRowWithTag:KEY_TRANSMISSION_TYPE].value = model.transmissionType;
+    [self.form formRowWithTag:KEY_WARRANTY].value = model.warranty;
+    [self.form formRowWithTag:KEY_MILEAGE].value = [NSString stringWithFormat:@"%lu 公里", self.mileage];
+    [self.form formRowWithTag:KEY_DATE_OF_PURCHASE].value = [NSDateFormatter localizedStringFromDate:self.dateOfPurchase
+                                                                                      dateStyle:NSDateFormatterLongStyle
+                                                                                      timeStyle:NSDateFormatterNoStyle];
     
     [self.tableView reloadData];
 }
@@ -94,27 +97,27 @@ NSString *const kSubmitButton = @"submitButton";
     [formDescriptor addFormSection:section];
     
     // Car Structure
-    row = [XLFormRowDescriptor formRowDescriptorWithTag:kCarStructure rowType:XLFormRowDescriptorTypeInfo title:@"车身结构"];
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:KEY_CAR_STRUCTURE rowType:XLFormRowDescriptorTypeInfo title:@"车身结构"];
     [row.cellConfig setObject:[UIFont boldSystemFontOfSize:17] forKey:@"textLabel.font"];
     [section addFormRow:row];
     
     // Engine
-    row = [XLFormRowDescriptor formRowDescriptorWithTag:kEngine rowType:XLFormRowDescriptorTypeInfo title:@"发动机"];
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:KEY_ENGINE rowType:XLFormRowDescriptorTypeInfo title:@"发动机"];
     [row.cellConfig setObject:[UIFont boldSystemFontOfSize:17] forKey:@"textLabel.font"];
     [section addFormRow:row];
     
     // Drive type
-    row = [XLFormRowDescriptor formRowDescriptorWithTag:kDriveType rowType:XLFormRowDescriptorTypeInfo title:@"驱动方式"];
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:KEY_DRIVE_TYPE rowType:XLFormRowDescriptorTypeInfo title:@"驱动方式"];
     [row.cellConfig setObject:[UIFont boldSystemFontOfSize:17] forKey:@"textLabel.font"];
     [section addFormRow:row];
     
     // Transmission type
-    row = [XLFormRowDescriptor formRowDescriptorWithTag:kTransmissionType rowType:XLFormRowDescriptorTypeInfo title:@"变速箱"];
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:KEY_TRANSMISSION_TYPE rowType:XLFormRowDescriptorTypeInfo title:@"变速箱"];
     [row.cellConfig setObject:[UIFont boldSystemFontOfSize:17] forKey:@"textLabel.font"];
     [section addFormRow:row];
 
     // Warranty
-    row = [XLFormRowDescriptor formRowDescriptorWithTag:kWarranty rowType:XLFormRowDescriptorTypeInfo title:@"整车质保"];
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:KEY_WARRANTY rowType:XLFormRowDescriptorTypeInfo title:@"整车质保"];
     [row.cellConfig setObject:[UIFont boldSystemFontOfSize:17] forKey:@"textLabel.font"];
     [section addFormRow:row];
 
@@ -125,21 +128,21 @@ NSString *const kSubmitButton = @"submitButton";
     [formDescriptor addFormSection:section];
     
     // Date of purchase
-    row = [XLFormRowDescriptor formRowDescriptorWithTag:kDateOfPurchase rowType:XLFormRowDescriptorTypeDate title:@"购车日期"];
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:KEY_DATE_OF_PURCHASE rowType:XLFormRowDescriptorTypeInfo title:@"购车日期"];
     [row.cellConfig setObject:[UIFont boldSystemFontOfSize:17] forKey:@"textLabel.font"];
     [section addFormRow:row];
     
     // Mileage
-    row = [XLFormRowDescriptor formRowDescriptorWithTag:kMileage rowType:XLFormRowDescriptorTypeInteger title:@"行驶里程"];
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:KEY_MILEAGE rowType:XLFormRowDescriptorTypeInfo title:@"行驶里程"];
     [row.cellConfig setObject:[UIFont boldSystemFontOfSize:17] forKey:@"textLabel.font"];
-    [row.cellConfigAtConfigure setObject:[NSNumber numberWithInteger:NSTextAlignmentRight] forKey:@"textField.textAlignment"];
+    // [row.cellConfigAtConfigure setObject:[NSNumber numberWithInteger:NSTextAlignmentRight] forKey:@"textField.textAlignment"];
     [section addFormRow:row];
     
     section = [XLFormSectionDescriptor formSectionWithTitle:@"保养相关"];
     [formDescriptor addFormSection:section];
     
     // Load initial package
-    row = [XLFormRowDescriptor formRowDescriptorWithTag:kLoadInitialPackage rowType:XLFormRowDescriptorTypeBooleanSwitch title:@"是否添加默认配件列表"];
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:KEY_LOAD_INITIAL_PACKAGE rowType:XLFormRowDescriptorTypeBooleanSwitch title:@"是否添加默认配件列表"];
     [row.cellConfig setObject:[UIFont boldSystemFontOfSize:17] forKey:@"textLabel.font"];
     row.value = [NSNumber numberWithBool:YES]; 
     [section addFormRow:row];
@@ -148,7 +151,7 @@ NSString *const kSubmitButton = @"submitButton";
     [formDescriptor addFormSection:section];
     
     // Button
-    XLFormRowDescriptor * buttonRow = [XLFormRowDescriptor formRowDescriptorWithTag:kSubmitButton rowType:XLFormRowDescriptorTypeButton title:@"添 加"];
+    XLFormRowDescriptor * buttonRow = [XLFormRowDescriptor formRowDescriptorWithTag:KEY_SUBMIT_BUTTON rowType:XLFormRowDescriptorTypeButton title:@"添 加"];
     [buttonRow.cellConfig setObject:self.view.tintColor forKey:@"textLabel.textColor"];
     [buttonRow.cellConfig setObject:[UIFont boldSystemFontOfSize:18] forKey:@"textLabel.font"];
     [section addFormRow:buttonRow];
@@ -165,8 +168,14 @@ NSString *const kSubmitButton = @"submitButton";
 {
     [super didSelectFormRow:formRow];
     
-    if ([formRow.tag isEqual:kSubmitButton]){
-        if ([[NSDate date] compare:[self.form formRowWithTag:kDateOfPurchase].value] == NSOrderedAscending) {
+    if ([formRow.tag isEqual:KEY_DATE_OF_PURCHASE]) {
+        [self openDateSelectionController:self initDate:self.dateOfPurchase];
+    } else if ([formRow.tag isEqual:KEY_MILEAGE]) {
+        [self openPickerController:self initMileage:self.mileage];
+    }
+    
+    if ([formRow.tag isEqual:KEY_SUBMIT_BUTTON]){
+        if ([[NSDate date] compare:self.dateOfPurchase] == NSOrderedAscending) {
             [PXAlertView showAlertWithTitle:@"日期填写错误"
                                     message:@"购车日期不得晚于当天日期"
                                 cancelTitle:@"OK"
@@ -179,8 +188,8 @@ NSString *const kSubmitButton = @"submitButton";
             return;
         }
         
-        NSNumber *mileage = [self.form formRowWithTag:kMileage].value;
-        if (!mileage || ([mileage longValue] < 0 || [mileage longValue] > 1000000)) {
+        NSUInteger inputMileage = self.mileage;
+        if (!inputMileage || inputMileage > 1000000) {
             [PXAlertView showAlertWithTitle:@"里程数填写错误"
                                     message:@"请填写有效行驶里程，且不得超过1000000公里"
                                 cancelTitle:@"OK"
@@ -194,7 +203,8 @@ NSString *const kSubmitButton = @"submitButton";
         }
         Cars *car = [Cars MR_createEntity];
         car.addedDate = [NSDate date];
-        car.purchaseDate = [self.form formRowWithTag:kDateOfPurchase].value;
+        car.initialMilage = [NSNumber numberWithInteger:self.mileage];
+        car.purchaseDate = self.dateOfPurchase;
         car.whichModel = self.stepsController.results[KEY_SELECTED_MODEL];
         car.deleted = [NSNumber numberWithBool:NO];
         

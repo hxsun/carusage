@@ -17,20 +17,19 @@
     [super viewDidLoad];
 
     [self initializeForm];
-    [self initializeData];
-    // self.tableView.sectionHeaderHeight = 44;
 }
 
 - (void)initializeData {
-    if (!self.dateOfPurchase) {
-        self.dateOfPurchase = [NSDate date];
+    if (!_dateOfPurchase) {
+        _dateOfPurchase = [NSDate date];
     }
-    self.mileage = 0;
+    _mileage = 0;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     if (self.form) {
+        [self initializeData];
         [self updateFormValues:self.stepsController.results];
     }
 }
@@ -189,7 +188,7 @@
         }
         
         NSUInteger inputMileage = self.mileage;
-        if (!inputMileage || inputMileage > 1000000) {
+        if (inputMileage > 1000000) {
             [PXAlertView showAlertWithTitle:@"里程数填写错误"
                                     message:@"请填写有效行驶里程，且不得超过1000000公里"
                                 cancelTitle:@"OK"

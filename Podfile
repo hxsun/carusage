@@ -12,3 +12,7 @@ pod "RMDateSelectionViewController"
 
 pod "RMPickerViewController"
 
+pod "MCSwipeTableViewCell"
+
+pod "SWRevealViewController"
+

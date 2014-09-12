@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
+#import "MCSwipeTableViewCell.h"
+#import "Cars.h"
 
-@interface GarageTableViewController : UITableViewController
+@interface GarageTableViewController : UITableViewController <MCSwipeTableViewCellDelegate>
+
+@property (nonatomic, strong) Cars *selectedCar;
 
 @end

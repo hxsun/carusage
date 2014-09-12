@@ -6,6 +6,12 @@
 // project.
 
 
+// MCSwipeTableViewCell
+#define COCOAPODS_POD_AVAILABLE_MCSwipeTableViewCell
+#define COCOAPODS_VERSION_MAJOR_MCSwipeTableViewCell 2
+#define COCOAPODS_VERSION_MINOR_MCSwipeTableViewCell 1
+#define COCOAPODS_VERSION_PATCH_MCSwipeTableViewCell 0
+
 // MagicalRecord
 #define COCOAPODS_POD_AVAILABLE_MagicalRecord
 #define COCOAPODS_VERSION_MAJOR_MagicalRecord 2
@@ -41,4 +47,10 @@
 #define COCOAPODS_VERSION_MAJOR_RMStepsController 1
 #define COCOAPODS_VERSION_MINOR_RMStepsController 0
 #define COCOAPODS_VERSION_PATCH_RMStepsController 1
+
+// SWRevealViewController
+#define COCOAPODS_POD_AVAILABLE_SWRevealViewController
+#define COCOAPODS_VERSION_MAJOR_SWRevealViewController 2
+#define COCOAPODS_VERSION_MINOR_SWRevealViewController 3
+#define COCOAPODS_VERSION_PATCH_SWRevealViewController 0
 

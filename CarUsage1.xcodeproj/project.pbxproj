@@ -47,7 +47,7 @@
 		9F0065B719BABA4800222C7D /* MaintenanceRuleTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0065B619BABA4800222C7D /* MaintenanceRuleTestCase.m */; };
 		9F223A3719C30B6C006A13F7 /* CarInfoStep4VC+PickerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F223A3619C30B6C006A13F7 /* CarInfoStep4VC+PickerVC.m */; };
 		9F2941AA19B480E600D68CF7 /* CarSeriesStep2TVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F2941A919B480E600D68CF7 /* CarSeriesStep2TVC.m */; };
-		9F29421919B54BDD00D68CF7 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F29421819B54BDD00D68CF7 /* SWRevealViewController.m */; };
+		9F3FF26E19C3274800B2D4B3 /* GarageTableViewController+PickVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3FF26D19C3274800B2D4B3 /* GarageTableViewController+PickVC.m */; };
 		9F4ECC8D19ADCDE500D8DD8F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F4ECC8C19ADCDE500D8DD8F /* Foundation.framework */; };
 		9F4ECC8F19ADCDE500D8DD8F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F4ECC8E19ADCDE500D8DD8F /* CoreGraphics.framework */; };
 		9F4ECC9119ADCDE500D8DD8F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F4ECC9019ADCDE500D8DD8F /* UIKit.framework */; };
@@ -175,8 +175,8 @@
 		9F2941A819B480E600D68CF7 /* CarSeriesStep2TVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarSeriesStep2TVC.h; sourceTree = "<group>"; };
 		9F2941A919B480E600D68CF7 /* CarSeriesStep2TVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarSeriesStep2TVC.m; sourceTree = "<group>"; };
 		9F2941AB19B4965800D68CF7 /* CarAddingConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarAddingConstant.h; sourceTree = "<group>"; };
-		9F29421719B54BDD00D68CF7 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
-		9F29421819B54BDD00D68CF7 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		9F3FF26C19C3274800B2D4B3 /* GarageTableViewController+PickVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GarageTableViewController+PickVC.h"; sourceTree = "<group>"; };
+		9F3FF26D19C3274800B2D4B3 /* GarageTableViewController+PickVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GarageTableViewController+PickVC.m"; sourceTree = "<group>"; };
 		9F4ECC8919ADCDE500D8DD8F /* CarUsage1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarUsage1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F4ECC8C19ADCDE500D8DD8F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9F4ECC8E19ADCDE500D8DD8F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -519,10 +519,10 @@
 		9F4ECD0D19AE331A00D8DD8F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				9F29421719B54BDD00D68CF7 /* SWRevealViewController.h */,
-				9F29421819B54BDD00D68CF7 /* SWRevealViewController.m */,
 				9F4ECCDB19AE198100D8DD8F /* GarageTableViewController.h */,
 				9F4ECCDC19AE198100D8DD8F /* GarageTableViewController.m */,
+				9F3FF26C19C3274800B2D4B3 /* GarageTableViewController+PickVC.h */,
+				9F3FF26D19C3274800B2D4B3 /* GarageTableViewController+PickVC.m */,
 				9F4ECD1119AE37F900D8DD8F /* MenuTableViewController.h */,
 				9F4ECD1219AE37F900D8DD8F /* MenuTableViewController.m */,
 				9F5DCAF319B1D991007AF905 /* CarBrandsStep1TVC.h */,
@@ -697,7 +697,6 @@
 				9F00659019B8E05600222C7D /* XLFormSegmentedCell.m in Sources */,
 				9F00658E19B8E05600222C7D /* XLFormLeftRightSelectorCell.m in Sources */,
 				9F4ECCDD19AE198100D8DD8F /* GarageTableViewController.m in Sources */,
-				9F29421919B54BDD00D68CF7 /* SWRevealViewController.m in Sources */,
 				9F00659E19B8E05600222C7D /* NSObject+XLFormAdditions.m in Sources */,
 				9F00659919B8E05600222C7D /* XLFormViewController.m in Sources */,
 				9F00659F19B8E05600222C7D /* UIView+XLFormAdditions.m in Sources */,
@@ -731,6 +730,7 @@
 				9FB2C97819B5C9B80034631A /* CarModelsStep3TVC.m in Sources */,
 				9F00658D19B8E05600222C7D /* XLFormInlineSelectorCell.m in Sources */,
 				9F00659B19B8E05600222C7D /* XLFormRowDescriptor.m in Sources */,
+				9F3FF26E19C3274800B2D4B3 /* GarageTableViewController+PickVC.m in Sources */,
 				9F00658C19B8E05600222C7D /* XLFormDatePickerCell.m in Sources */,
 				9F00659A19B8E05600222C7D /* XLFormDescriptor.m in Sources */,
 				9F00658819B8E05600222C7D /* XLFormBaseCell.m in Sources */,

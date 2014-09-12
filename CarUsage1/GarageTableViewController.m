@@ -11,12 +11,17 @@
 #import "Cars.h"
 #import "Models.h"
 #import "SWRevealViewController.h"
+#import "MCSwipeTableViewCell.h"
+#import "PXAlertView.h"
+#import "GarageTableViewController+PickVC.h"
 
 @interface GarageTableViewController ()
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *revealButtonItem;
 
 @property (strong, nonatomic) NSMutableArray *ownedCars;
+
+@property (nonatomic, strong) MCSwipeTableViewCell *cellToDelete;
 
 @end
 
@@ -79,16 +84,117 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"Car Cell"];
+    static NSString *cellIdentifier = @"Car Cell";
+    MCSwipeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if (!cell) {
+        
+        cell = [[MCSwipeTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
+        if ([cell respondsToSelector:@selector(setSeparatorInset:)]) {
+            cell.separatorInset = UIEdgeInsetsZero;
+        }
+        [cell setSelectionStyle:UITableViewCellSelectionStyleBlue];
+        cell.contentView.backgroundColor = [UIColor whiteColor];
+    }
     
-    Cars *car = [self.ownedCars objectAtIndex:indexPath.row];
-    cell.textLabel.text = car.whichModel.name;
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"Bought at %@",
-                                 [NSDateFormatter localizedStringFromDate:car.purchaseDate
-                                                                dateStyle:NSDateFormatterShortStyle
-                                                                timeStyle:NSDateFormatterNoStyle]];
+    [self configureCell:cell forRowAtIndexPath:indexPath];
     
     return cell;
+}
+
+- (NSString *)trimLastChineseChars:(NSString *)originalString {
+    NSString *modelName = [originalString mutableCopy];
+    long length = [modelName length];
+    int index = 0;
+    for (int i = 0; i < length; i++) {
+        NSRange range = NSMakeRange(i, 1);
+        NSString *subString = [modelName substringWithRange:range];
+        const char *cString = [subString UTF8String];
+        if (strlen(cString) != 3) {
+            index = i;
+        }
+    }
+    
+    return [originalString substringToIndex:index];
+}
+
+- (void)configureCell:(MCSwipeTableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    UIView *crossView = [self viewWithImageName:@"cross"];
+    UIColor *redColor = [UIColor colorWithRed:232.0 / 255.0 green:61.0 / 255.0 blue:14.0 / 255.0 alpha:1.0];
+    
+    UIView *clockView = [self viewWithImageName:@"clock"];
+    UIColor *blueColor = [UIColor colorWithRed:0 / 255.0 green:122.0 / 255.0 blue:255.0 / 255.0 alpha:1.0];
+    
+    [cell setDefaultColor:self.tableView.backgroundView.backgroundColor];
+    
+    [cell setDelegate:self];
+    Cars *car = [self.ownedCars objectAtIndex:indexPath.row];
+    
+    cell.textLabel.text = [self trimLastChineseChars:car.whichModel.name];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"Purchased at %@", [NSDateFormatter localizedStringFromDate:car.purchaseDate
+                                                                                                              dateStyle:NSDateFormatterShortStyle
+                                                                                                              timeStyle:NSDateFormatterNoStyle]];
+    [cell setSwipeGestureWithView:crossView
+                            color:redColor
+                             mode:MCSwipeTableViewCellModeExit
+                            state:MCSwipeTableViewCellState3
+                  completionBlock:^(MCSwipeTableViewCell *cell, MCSwipeTableViewCellState state, MCSwipeTableViewCellMode mode) {
+                      // TODO;
+                      DLog(@"Swipe to delete the car.");
+                      
+                      _cellToDelete = cell;
+                      
+                      [PXAlertView showAlertWithTitle:@"确认删除"
+                                              message:@"删除后不能恢复，请确认是否删除"
+                                          cancelTitle:@"取消"
+                                           otherTitle:@"删除"
+                                           completion:^(BOOL cancelled, NSInteger buttonIndex) {
+                                               if (cancelled) {
+                                                   DLog(@"Cancel button pressed");
+                                                   [_cellToDelete swipeToOriginWithCompletion:^{
+                                                       DLog(@"Swiped back!");
+                                                   }];
+                                                   _cellToDelete = nil;
+                                                   
+                                               } else {
+                                                   [car MR_deleteEntity];
+                                                   [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
+                                                   [self.ownedCars removeObjectAtIndex:indexPath.row];
+                                                   
+                                                   [self.tableView deleteRowsAtIndexPaths:@[[self.tableView indexPathForCell:_cellToDelete]] withRowAnimation:UITableViewRowAnimationFade];
+                                                   
+                                                   // [self.tableView reloadData];
+                                                   DLog(@"Deleted.");
+                                               }
+                                           }];
+                  }];
+    
+    [cell setSwipeGestureWithView:clockView
+                            color:blueColor
+                             mode:MCSwipeTableViewCellModeExit
+                            state:MCSwipeTableViewCellState1
+                  completionBlock:^(MCSwipeTableViewCell *cell, MCSwipeTableViewCellState state, MCSwipeTableViewCellMode mode) {
+                      // TODO;
+                      DLog(@"Swipe to update the mileage.");
+                      
+                      _selectedCar = car;
+                      _cellToDelete = cell;
+                      [self openPickerController:self selectedCar:car swipeBackBlock:^{
+                          [_cellToDelete swipeToOriginWithCompletion:^{
+                              DLog(@"Swiped back!");
+                          }];
+                          _cellToDelete = nil;
+                      }];
+                      
+                      
+                  }];
+}
+
+- (UIView *)viewWithImageName:(NSString *)imageName {
+    UIImage *image = [UIImage imageNamed:imageName];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+    imageView.contentMode = UIViewContentModeCenter;
+    return imageView;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

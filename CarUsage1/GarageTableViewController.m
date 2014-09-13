@@ -123,7 +123,7 @@
     UIColor *redColor = [UIColor colorWithRed:232.0 / 255.0 green:61.0 / 255.0 blue:14.0 / 255.0 alpha:1];
     
     UIView *clockView = [self viewWithImageName:@"clock"];
-    UIColor *blueColor = [UIColor colorWithRed:0 / 255.0 green:122.0 / 255.0 blue:255.0 / 255.0 alpha:1];
+    UIColor *blueColor = [UIColor colorWithRed:126 / 255.0 green:206.0 / 255.0 blue:255.0 / 255.0 alpha:1];
     
     [cell setDefaultColor:self.tableView.backgroundView.backgroundColor];
     

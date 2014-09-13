@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="14A329r" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6244" systemVersion="14A329r" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Brands" representedClassName="Brands" syncable="YES">
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="isSubbrand" optional="YES" attributeType="Boolean" syncable="YES"/>
@@ -22,7 +22,10 @@
         <relationship name="whichModel" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Models" inverseName="typeOfCar" inverseEntity="Models" syncable="YES"/>
     </entity>
     <entity name="Components" representedClassName="Components" syncable="YES">
+        <attribute name="comment" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="compDescription" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="image" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="replacedAt" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MaintenanceHistory" inverseName="hasUpdated" inverseEntity="MaintenanceHistory" syncable="YES"/>
     </entity>
@@ -60,7 +63,7 @@
     <elements>
         <element name="Brands" positionX="-225" positionY="-10" width="128" height="193"/>
         <element name="Cars" positionX="-36" positionY="374" width="128" height="28"/>
-        <element name="Components" positionX="133" positionY="162" width="128" height="88"/>
+        <element name="Components" positionX="133" positionY="162" width="128" height="135"/>
         <element name="MaintenanceHistory" positionX="133" positionY="279" width="128" height="88"/>
         <element name="Models" positionX="-38" positionY="162" width="128" height="208"/>
         <element name="Series" positionX="-36" positionY="-0" width="128" height="118"/>

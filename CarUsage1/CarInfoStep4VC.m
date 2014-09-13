@@ -7,6 +7,10 @@
 #import "PXAlertView.h"
 #import "Cars.h"
 #import "CarInfoStep4VC+PickerVC.h"
+#import "OfficialPackage.h"
+#import "ComponentEntry.h"
+#import "PackageComponentEntry.h"
+#import "MaintenanceHistory.h"
 
 @implementation CarInfoStep4VC
 
@@ -205,12 +209,44 @@
         car.initialMilage = [NSNumber numberWithInteger:self.mileage];
         car.purchaseDate = self.dateOfPurchase;
         car.whichModel = self.stepsController.results[KEY_SELECTED_MODEL];
-        
         [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
+        
+        if ([[self.form formRowWithTag:KEY_LOAD_INITIAL_PACKAGE].value isEqualToNumber:[NSNumber numberWithBool:YES]]) {
+            [self createInitialMaintenanceHistory:car];
+        }
+        
+        
         
         [self deselectFormRow:formRow];
         [self.stepsController showNextStep];
     }
 }
+
+- (void)createInitialMaintenanceHistory:(Cars *)car {
+    DLog(@"model: %@, package: %@, comtainsComponents:%@", car.whichModel, car.whichModel.hasPackage, car.whichModel.hasPackage.containsComponents);
+    
+    NSArray *officialPackageComps = [car.whichModel.hasPackage.containsComponents allObjects];
+    if (!officialPackageComps || [officialPackageComps count] == 0) {
+        DLog(@"Current Car model does not have the official maintenance package.");
+        return;
+    }
+    
+    MaintenanceHistory *initialMtHistory = [MaintenanceHistory MR_createEntity];
+    initialMtHistory.mileage = car.initialMilage;
+    initialMtHistory.updatedDate = car.addedDate;
+    initialMtHistory.maintenanceTakenByCar = car;
+
+    [officialPackageComps enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        ComponentEntry *componentEntry = [ComponentEntry MR_createEntity];
+        PackageComponentEntry *officialEntry = (PackageComponentEntry *)obj;
+        componentEntry.compType = officialEntry.compType;
+        componentEntry.compMake = officialEntry.compMake;
+        componentEntry.compModel = officialEntry.compModel;
+        componentEntry.suggestedPrice = officialEntry.suggestedPrice;
+        componentEntry.replacedAt = initialMtHistory;
+    }];
+    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
+}
+
 
 @end

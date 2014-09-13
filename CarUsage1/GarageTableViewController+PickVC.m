@@ -53,7 +53,7 @@
             
             UpdateHistory *updateHistory = [UpdateHistory MR_createEntity];
             updateHistory.mileage = [NSNumber numberWithInteger:inputMilage];
-            updateHistory.updateDate = [NSDate date];
+            updateHistory.updatedDate = [NSDate date];
             updateHistory.updateTakenByCar = car;
             
             [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];

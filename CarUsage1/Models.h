@@ -2,14 +2,14 @@
 //  Models.h
 //  CarUsage1
 //
-//  Created by Kenneth Sun on 9/13/14.
+//  Created by Kenneth Sun on 9/14/14.
 //  Copyright (c) 2014 fatken. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class Cars, Series;
+@class Cars, OfficialPackage, Series;
 
 @interface Models : NSManagedObject
 
@@ -22,6 +22,7 @@
 @property (nonatomic, retain) NSDate * publishedYear;
 @property (nonatomic, retain) NSString * transmissionType;
 @property (nonatomic, retain) NSString * warranty;
+@property (nonatomic, retain) OfficialPackage *hasPackage;
 @property (nonatomic, retain) Series *series;
 @property (nonatomic, retain) Cars *typeOfCar;
 

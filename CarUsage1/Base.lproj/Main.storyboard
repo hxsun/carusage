@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A329r" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="zID-O4-j7G">
     <dependencies>
-        <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
-        <!--My Garage-->
+        <!--我的车库-->
         <scene sceneID="gyT-HZ-1fT">
             <objects>
                 <tableViewController id="HOO-pr-D1u" customClass="GarageTableViewController" sceneMemberID="viewController">
@@ -14,7 +13,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Car Cell" textLabel="rHo-Bc-7e5" detailTextLabel="c6d-fa-kEr" rowHeight="70" style="IBUITableViewCellStyleSubtitle" id="oBy-P9-VyC" customClass="MCSwipeTableViewCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Car Cell" textLabel="rHo-Bc-7e5" detailTextLabel="c6d-fa-kEr" rowHeight="70" style="IBUITableViewCellStyleSubtitle" id="oBy-P9-VyC" customClass="MCSwipeTableViewCell">
                                 <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oBy-P9-VyC" id="rVK-8U-B6Y">
@@ -37,6 +36,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="x6P-C1-ePJ" kind="push" identifier="Select Car" id="2Rf-zD-4LA"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -44,7 +46,7 @@
                             <outlet property="delegate" destination="HOO-pr-D1u" id="gwL-fy-oI7"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="My Garage" id="WsB-ij-07Z">
+                    <navigationItem key="navigationItem" title="我的车库" id="WsB-ij-07Z">
                         <barButtonItem key="leftBarButtonItem" image="reveal-icon" id="tHR-9r-847"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="LoD-uq-0yU">
                             <connections>
@@ -60,6 +62,33 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uZS-cM-XVA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="666" y="77"/>
+        </scene>
+        <!--配件列表-->
+        <scene sceneID="kIa-Dy-cFd">
+            <objects>
+                <tableViewController id="x6P-C1-ePJ" customClass="ComponentListTVC" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="55" sectionHeaderHeight="22" sectionFooterHeight="22" id="LgH-YB-aQx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Component Cell" rowHeight="55" id="1Wp-tG-Oyj">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1Wp-tG-Oyj" id="c6Q-4M-ne9">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="x6P-C1-ePJ" id="ChD-oR-Jyc"/>
+                            <outlet property="delegate" destination="x6P-C1-ePJ" id="8C1-UO-A2i"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="配件列表" id="Rgo-S6-7k8"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2iT-Vh-1Qc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1141" y="77"/>
         </scene>
         <!--MENU-->
         <scene sceneID="LUh-BM-Got">

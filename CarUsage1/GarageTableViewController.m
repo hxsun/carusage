@@ -14,6 +14,7 @@
 #import "MCSwipeTableViewCell.h"
 #import "PXAlertView.h"
 #import "GarageTableViewController+PickVC.h"
+#import "ComponentListTVC.h"
 
 @interface GarageTableViewController ()
 
@@ -29,9 +30,8 @@
 
 - (void)refreshData {
     [self.ownedCars removeAllObjects];
-    
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"deleted != 1"];
-    self.ownedCars = [[Cars MR_findAllWithPredicate:predicate] mutableCopy];
+
+    self.ownedCars = [[Cars MR_findAll] mutableCopy];
 
     [self.tableView reloadData];
 }
@@ -243,15 +243,15 @@
 }
 */
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"Select Car"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        ComponentListTVC *dest = segue.destinationViewController;
+        dest.car = [self.ownedCars objectAtIndex:indexPath.row];
+    }
+    
 }
-*/
+
 
 @end

@@ -44,7 +44,7 @@
             NSLog(@"Oops, could not copy preloaded data.");
         }
     }
-    [MagicalRecord setupCoreDataStackWithAutoMigratingSqliteStoreNamed:@"CarUsage.sqlite"];
+    [MagicalRecord setupCoreDataStackWithStoreNamed:@"CarUsage.sqlite"];
 }
 
 // Returns the URL to the application's Documents directory

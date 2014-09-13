@@ -2,7 +2,7 @@
 //  UpdateHistory.m
 //  CarUsage1
 //
-//  Created by Kenneth Sun on 9/13/14.
+//  Created by Kenneth Sun on 9/14/14.
 //  Copyright (c) 2014 fatken. All rights reserved.
 //
 
@@ -12,9 +12,8 @@
 
 @implementation UpdateHistory
 
-@dynamic id;
 @dynamic mileage;
-@dynamic updateDate;
+@dynamic updatedDate;
 @dynamic updateTakenByCar;
 
 @end

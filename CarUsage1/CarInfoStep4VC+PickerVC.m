@@ -28,7 +28,10 @@
     RMDateSelectionViewController *dateSelectionVC = [RMDateSelectionViewController dateSelectionController];
     // dateSelectionVC.titleLabel.text = @"This is an example.";
     dateSelectionVC.disableBouncingWhenShowing = YES;
-    // dateSelectionVC.disableBlurEffects = NO;
+    dateSelectionVC.titleLabel.font = [UIFont boldSystemFontOfSize:16];
+    dateSelectionVC.disableBouncingWhenShowing = YES;
+    dateSelectionVC.disableBlurEffects = NO;
+    dateSelectionVC.blurEffectStyle = UIBlurEffectStyleDark;
     dateSelectionVC.datePicker.datePickerMode = UIDatePickerModeDate;
     dateSelectionVC.datePicker.date = date;
     if([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
@@ -51,7 +54,10 @@
     RMPickerViewController *pickerVC = [RMPickerViewController pickerController];
     pickerVC.titleLabel.text = @"请输入已行驶里程（公里）";
     pickerVC.disableBouncingWhenShowing = YES;
-    
+    pickerVC.titleLabel.font = [UIFont boldSystemFontOfSize:16];
+    pickerVC.disableBouncingWhenShowing = YES;
+    pickerVC.disableBlurEffects = NO;
+    pickerVC.blurEffectStyle = UIBlurEffectStyleDark;
     pickerVC.picker.dataSource = self;
     pickerVC.picker.delegate = self;
     

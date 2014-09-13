@@ -14,12 +14,17 @@
     </entity>
     <entity name="Cars" representedClassName="Cars" syncable="YES">
         <attribute name="addedDate" optional="YES" attributeType="Date" syncable="YES"/>
-        <attribute name="deleted" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="initialMilage" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="purchaseDate" optional="YES" attributeType="Date" syncable="YES"/>
         <relationship name="hasMaintenanceHistories" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MaintenanceHistory" inverseName="maintenanceTakenByCar" inverseEntity="MaintenanceHistory" syncable="YES"/>
-        <relationship name="hasUpdateHistories" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="UpdateHistory" inverseName="updateTakenByCar" inverseEntity="UpdateHistory" syncable="YES"/>
+        <relationship name="hasUpdateHistories" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="UpdateHistory" inverseName="takenByCar" inverseEntity="UpdateHistory" syncable="YES"/>
         <relationship name="whichModel" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Models" inverseName="typeOfCar" inverseEntity="Models" syncable="YES"/>
+    </entity>
+    <entity name="ComponentEntry" representedClassName="ComponentEntry" syncable="YES">
+        <attribute name="compMake" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="compModel" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="compType" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Components" inverseName="instanceEntry" inverseEntity="Components" syncable="YES"/>
+        <relationship name="replacedAt" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MaintenanceHistory" inverseName="replaceComponents" inverseEntity="MaintenanceHistory" syncable="YES"/>
     </entity>
     <entity name="Components" representedClassName="Components" syncable="YES">
         <attribute name="comment" optional="YES" attributeType="String" syncable="YES"/>
@@ -27,12 +32,12 @@
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="image" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="replacedAt" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MaintenanceHistory" inverseName="hasUpdated" inverseEntity="MaintenanceHistory" syncable="YES"/>
+        <relationship name="instanceEntry" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ComponentEntry" inverseName="compType" inverseEntity="ComponentEntry" syncable="YES"/>
     </entity>
     <entity name="MaintenanceHistory" representedClassName="MaintenanceHistory" parentEntity="UpdateHistory" syncable="YES">
         <attribute name="location" optional="YES" attributeType="Binary" syncable="YES"/>
-        <relationship name="hasUpdated" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Components" inverseName="replacedAt" inverseEntity="Components" syncable="YES"/>
         <relationship name="maintenanceTakenByCar" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Cars" inverseName="hasMaintenanceHistories" inverseEntity="Cars" syncable="YES"/>
+        <relationship name="replaceComponents" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ComponentEntry" inverseName="replacedAt" inverseEntity="ComponentEntry" syncable="YES"/>
     </entity>
     <entity name="Models" representedClassName="Models" syncable="YES">
         <attribute name="carStructure" optional="YES" attributeType="String" syncable="YES"/>
@@ -44,8 +49,19 @@
         <attribute name="publishedYear" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="transmissionType" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="warranty" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="hasPackage" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="OfficialPackage" inverseName="belongsToModel" inverseEntity="OfficialPackage" syncable="YES"/>
         <relationship name="series" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Series" inverseName="models" inverseEntity="Series" syncable="YES"/>
         <relationship name="typeOfCar" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Cars" inverseName="whichModel" inverseEntity="Cars" syncable="YES"/>
+    </entity>
+    <entity name="OfficialPackage" representedClassName="OfficialPackage" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="officialSchedule" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="belongsToModel" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Models" inverseName="hasPackage" inverseEntity="Models" syncable="YES"/>
+        <relationship name="containsComponents" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PackageComponentEntry" inverseName="belongsToPackage" inverseEntity="PackageComponentEntry" syncable="YES"/>
+    </entity>
+    <entity name="PackageComponentEntry" representedClassName="PackageComponentEntry" parentEntity="ComponentEntry" syncable="YES">
+        <attribute name="officialSchedule" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <relationship name="belongsToPackage" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="OfficialPackage" inverseName="containsComponents" inverseEntity="OfficialPackage" syncable="YES"/>
     </entity>
     <entity name="Series" representedClassName="Series" syncable="YES">
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
@@ -55,18 +71,20 @@
         <relationship name="models" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Models" inverseName="series" inverseEntity="Models" syncable="YES"/>
     </entity>
     <entity name="UpdateHistory" representedClassName="UpdateHistory" syncable="YES">
-        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="mileage" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
-        <attribute name="updateDate" optional="YES" attributeType="Date" syncable="YES"/>
-        <relationship name="updateTakenByCar" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Cars" inverseName="hasUpdateHistories" inverseEntity="Cars" syncable="YES"/>
+        <attribute name="updatedDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="takenByCar" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Cars" inverseName="hasUpdateHistories" inverseEntity="Cars" syncable="YES"/>
     </entity>
     <elements>
         <element name="Brands" positionX="-225" positionY="-10" width="128" height="193"/>
-        <element name="Cars" positionX="-36" positionY="374" width="128" height="28"/>
-        <element name="Components" positionX="133" positionY="162" width="128" height="135"/>
-        <element name="MaintenanceHistory" positionX="133" positionY="279" width="128" height="88"/>
-        <element name="Models" positionX="-38" positionY="162" width="128" height="208"/>
+        <element name="Cars" positionX="-36" positionY="500" width="128" height="133"/>
+        <element name="Components" positionX="360" positionY="80" width="128" height="133"/>
+        <element name="MaintenanceHistory" positionX="142" positionY="360" width="128" height="88"/>
+        <element name="Models" positionX="-38" positionY="198" width="128" height="223"/>
         <element name="Series" positionX="-36" positionY="-0" width="128" height="118"/>
-        <element name="UpdateHistory" positionX="135" positionY="378" width="128" height="103"/>
+        <element name="UpdateHistory" positionX="133" positionY="558" width="128" height="90"/>
+        <element name="ComponentEntry" positionX="358" positionY="234" width="128" height="103"/>
+        <element name="OfficialPackage" positionX="153" positionY="113" width="128" height="103"/>
+        <element name="PackageComponentEntry" positionX="340" positionY="360" width="164" height="73"/>
     </elements>
 </model>

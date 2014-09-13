@@ -15,7 +15,6 @@
 @implementation Cars
 
 @dynamic addedDate;
-@dynamic deleted;
 @dynamic initialMilage;
 @dynamic purchaseDate;
 @dynamic hasMaintenanceHistories;

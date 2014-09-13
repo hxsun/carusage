@@ -75,6 +75,9 @@
 		9FED8A9C19C4196100623D97 /* UpdateHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FED8A9B19C4196100623D97 /* UpdateHistory.m */; };
 		9FED8A9F19C4196200623D97 /* MaintenanceHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FED8A9E19C4196200623D97 /* MaintenanceHistory.m */; };
 		9FED8AA219C4196200623D97 /* Models.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FED8AA119C4196200623D97 /* Models.m */; };
+		9FED8ABC19C42BBE00623D97 /* ComponentEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FED8ABB19C42BBE00623D97 /* ComponentEntry.m */; };
+		9FED8ABF19C42BBF00623D97 /* OfficialPackage.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FED8ABE19C42BBF00623D97 /* OfficialPackage.m */; };
+		9FED8AC819C434A000623D97 /* PackageComponentEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FED8AC719C434A000623D97 /* PackageComponentEntry.m */; };
 		9FF2642119B8183800279DFA /* NSMutableArray+KSSorted.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF2642019B8183800279DFA /* NSMutableArray+KSSorted.m */; };
 		9FF2642E19B84C4500279DFA /* CarInfoStep4VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF2642D19B84C4500279DFA /* CarInfoStep4VC.m */; };
 		AAB8A60FE81F42F99560A39F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 938665F7C1694F6E96F90DAF /* libPods.a */; };
@@ -225,6 +228,12 @@
 		9FED8A9E19C4196200623D97 /* MaintenanceHistory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaintenanceHistory.m; sourceTree = "<group>"; };
 		9FED8AA019C4196200623D97 /* Models.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Models.h; sourceTree = "<group>"; };
 		9FED8AA119C4196200623D97 /* Models.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Models.m; sourceTree = "<group>"; };
+		9FED8ABA19C42BBE00623D97 /* ComponentEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComponentEntry.h; sourceTree = "<group>"; };
+		9FED8ABB19C42BBE00623D97 /* ComponentEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComponentEntry.m; sourceTree = "<group>"; };
+		9FED8ABD19C42BBF00623D97 /* OfficialPackage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OfficialPackage.h; sourceTree = "<group>"; };
+		9FED8ABE19C42BBF00623D97 /* OfficialPackage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OfficialPackage.m; sourceTree = "<group>"; };
+		9FED8AC619C434A000623D97 /* PackageComponentEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PackageComponentEntry.h; sourceTree = "<group>"; };
+		9FED8AC719C434A000623D97 /* PackageComponentEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PackageComponentEntry.m; sourceTree = "<group>"; };
 		9FF2641F19B8183800279DFA /* NSMutableArray+KSSorted.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+KSSorted.h"; sourceTree = "<group>"; };
 		9FF2642019B8183800279DFA /* NSMutableArray+KSSorted.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+KSSorted.m"; sourceTree = "<group>"; };
 		9FF2642C19B84C4500279DFA /* CarInfoStep4VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarInfoStep4VC.h; sourceTree = "<group>"; };
@@ -488,6 +497,12 @@
 			children = (
 				9F5F7B8F19BF4AFE009E84CF /* CarUsage.sqlite */,
 				9FAD70B919B4470C00B1064C /* CarUsage.xcdatamodel */,
+				9FED8AC619C434A000623D97 /* PackageComponentEntry.h */,
+				9FED8AC719C434A000623D97 /* PackageComponentEntry.m */,
+				9FED8ABD19C42BBF00623D97 /* OfficialPackage.h */,
+				9FED8ABE19C42BBF00623D97 /* OfficialPackage.m */,
+				9FED8ABA19C42BBE00623D97 /* ComponentEntry.h */,
+				9FED8ABB19C42BBE00623D97 /* ComponentEntry.m */,
 				9FED8AA019C4196200623D97 /* Models.h */,
 				9FED8AA119C4196200623D97 /* Models.m */,
 				9FED8A9D19C4196200623D97 /* MaintenanceHistory.h */,
@@ -709,12 +724,15 @@
 				9FED8A9619C4196100623D97 /* Cars.m in Sources */,
 				9F00659D19B8E05600222C7D /* NSArray+XLFormAdditions.m in Sources */,
 				9F0065A319B8E05600222C7D /* XLFormRegexValidator.m in Sources */,
+				9FED8ABF19C42BBF00623D97 /* OfficialPackage.m in Sources */,
 				9F0065A119B8E05600222C7D /* XLFormRightImageButton.m in Sources */,
 				9F00659719B8E05600222C7D /* XLFormOptionsObject.m in Sources */,
 				9F5DC9CE19B06126007AF905 /* ModelStepsNavController.m in Sources */,
 				9F0065A219B8E05600222C7D /* XLFormTextView.m in Sources */,
 				9F0065A419B8E05600222C7D /* XLFormValidationStatus.m in Sources */,
+				9FED8ABC19C42BBE00623D97 /* ComponentEntry.m in Sources */,
 				9FAD70C619B4470C00B1064C /* CarUsage.xcdatamodel in Sources */,
+				9FED8AC819C434A000623D97 /* PackageComponentEntry.m in Sources */,
 				9F4ECC9D19ADCDE500D8DD8F /* KSAppDelegate.m in Sources */,
 				9FF2642E19B84C4500279DFA /* CarInfoStep4VC.m in Sources */,
 				9FED8A9C19C4196100623D97 /* UpdateHistory.m in Sources */,

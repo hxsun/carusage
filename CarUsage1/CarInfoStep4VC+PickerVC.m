@@ -15,7 +15,7 @@
 
 @implementation CarInfoStep4VC (PickerVC)
 
-- (void)initializeData {
+- (void)initializeFormData {
     if (!self.dateOfPurchase) {
         self.dateOfPurchase = [NSDate date];
     }

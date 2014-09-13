@@ -11,7 +11,7 @@
 
 @interface CarInfoStep4VC (PickerVC)<UIPickerViewDataSource, UIPickerViewDelegate>
 
-- (void)initializeData;
+- (void)initializeFormData;
 
 - (IBAction)openDateSelectionController:(id)sender initDate:(NSDate *)date;
 

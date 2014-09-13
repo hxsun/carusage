@@ -14,7 +14,6 @@
 @interface Cars : NSManagedObject
 
 @property (nonatomic, retain) NSDate * addedDate;
-@property (nonatomic, retain) NSNumber * deleted;
 @property (nonatomic, retain) NSNumber * initialMilage;
 @property (nonatomic, retain) NSDate * purchaseDate;
 @property (nonatomic, retain) NSSet *hasMaintenanceHistories;

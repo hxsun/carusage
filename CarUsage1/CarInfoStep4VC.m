@@ -205,7 +205,6 @@
         car.initialMilage = [NSNumber numberWithInteger:self.mileage];
         car.purchaseDate = self.dateOfPurchase;
         car.whichModel = self.stepsController.results[KEY_SELECTED_MODEL];
-        car.deleted = [NSNumber numberWithBool:NO];
         
         [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
         

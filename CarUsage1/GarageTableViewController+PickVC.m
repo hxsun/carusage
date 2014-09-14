@@ -18,8 +18,6 @@
     pickerVC.titleLabel.text = @"请选择已行驶里程（公里）";
     pickerVC.titleLabel.font = [UIFont boldSystemFontOfSize:16];
     pickerVC.disableBouncingWhenShowing = YES;
-    pickerVC.disableBlurEffects = NO;
-    pickerVC.blurEffectStyle = UIBlurEffectStyleDark;
     
     pickerVC.picker.dataSource = self;
     pickerVC.picker.delegate = self;

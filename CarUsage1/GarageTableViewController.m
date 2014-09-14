@@ -117,6 +117,43 @@
     return [originalString substringToIndex:index];
 }
 
+/*
+-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [cell setBackgroundColor:[UIColor clearColor]];
+    
+    CAGradientLayer *grad = [CAGradientLayer layer];
+    grad.frame = cell.bounds;
+    grad.opacity = .2;
+    grad.startPoint = CGPointMake(0.0, 0.5);
+    grad.endPoint = CGPointMake(1.0, 0.5);
+    NSNumber *gradBottomStart = [NSNumber numberWithFloat:0.8];
+    NSNumber *gradBottomEnd = [NSNumber numberWithFloat:1.0];
+    grad.locations = @[gradBottomStart, gradBottomEnd];
+
+    grad.colors = [NSArray arrayWithObjects:(id)[[UIColor greenColor] CGColor], (id)[[UIColor greenColor] CGColor], nil];
+    
+    [cell setBackgroundView:[[UIView alloc] init]];
+    [cell.backgroundView.layer insertSublayer:grad atIndex:0];
+    
+    CAGradientLayer *selectedGrad = [CAGradientLayer layer];
+    selectedGrad.frame = cell.bounds;
+    selectedGrad.opacity = 0.5;
+    selectedGrad.startPoint = CGPointMake(0.0, 0.5);
+    selectedGrad.endPoint = CGPointMake(1.0, 0.5);
+    selectedGrad.colors = [NSArray arrayWithObjects:(id)[[UIColor whiteColor] CGColor], (id)[[UIColor blackColor] CGColor], nil];
+    
+    [cell setSelectedBackgroundView:[[UIView alloc] init]];
+    [cell.selectedBackgroundView.layer insertSublayer:selectedGrad atIndex:0];
+}
+ 
+ */
+
+-(UITableViewCellAccessoryType)tableView:(UITableView *)tv accessoryTypeForRowWithIndexPath:(NSIndexPath *)indexPath {
+    
+    return UITableViewCellAccessoryNone;
+}
+
 - (void)configureCell:(MCSwipeTableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
     
     UIView *crossView = [self viewWithImageName:@"cross"];

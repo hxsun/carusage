@@ -30,8 +30,7 @@
     dateSelectionVC.disableBouncingWhenShowing = YES;
     dateSelectionVC.titleLabel.font = [UIFont boldSystemFontOfSize:16];
     dateSelectionVC.disableBouncingWhenShowing = YES;
-    dateSelectionVC.disableBlurEffects = NO;
-    dateSelectionVC.blurEffectStyle = UIBlurEffectStyleDark;
+
     dateSelectionVC.datePicker.datePickerMode = UIDatePickerModeDate;
     dateSelectionVC.datePicker.date = date;
     if([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
@@ -56,8 +55,7 @@
     pickerVC.disableBouncingWhenShowing = YES;
     pickerVC.titleLabel.font = [UIFont boldSystemFontOfSize:16];
     pickerVC.disableBouncingWhenShowing = YES;
-    pickerVC.disableBlurEffects = NO;
-    pickerVC.blurEffectStyle = UIBlurEffectStyleDark;
+
     pickerVC.picker.dataSource = self;
     pickerVC.picker.delegate = self;
     

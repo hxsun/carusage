@@ -8,8 +8,6 @@ pod "PXAlertView"
 
 pod "RMDateSelectionViewController"
 
-pod "RMDateSelectionViewController"
-
 pod "RMPickerViewController"
 
 pod "MCSwipeTableViewCell"
